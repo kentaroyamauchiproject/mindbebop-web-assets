@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>MINDBEBOP — 思考はどこへ行くのか</title>
+
+<link rel="canonical" href="https://jp.mindbebop.com/where-thoughts-go">
+<meta name="robots" content="index, follow">
+
+<meta name="description" content="MINDBEBOPシステムの中で思考がどこへ行くのかを示す静かな地図。どのツールを、いつ、なぜ使うのかを示すシンプルなガイド。">
+
+<meta property="og:title" content="MINDBEBOP — 思考はどこへ行くのか">
+<meta property="og:description" content="思考には、それぞれ着地すべき場所があります。反転、脇に置く、静める、戻す、役割から離れる、時間によって手放す。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://jp.mindbebop.com/where-thoughts-go">
+
+<style>
+:root {
+  --bg: #ffffff;
+  --fg: #000000;
+  --border: #333333;
+  --muted: rgba(0,0,0,0.72);
+  --soft: #F2F2F7;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #000000;
+    --fg: #f2f2f7;
+    --border: rgba(242, 242, 247, 0.25);
+    --muted: rgba(242,242,247,0.72);
+    --soft: #2C2C2C;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background-color: var(--bg);
+  color: var(--fg);
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.page {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 40px 20px 80px;
+}
+
+h1 {
+  font-weight: 600;
+  font-size: 2rem;
+  margin: 0 0 14px;
+}
+
+h2 {
+  font-weight: 600;
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+
+p { margin: 0 0 16px; }
+
+a { color: inherit; text-decoration: underline; }
+
+.subtle { color: var(--muted); }
+
+.rule {
+  border: none;
+  border-bottom: 1px solid var(--border);
+  margin: 40px 0;
+}
+
+.map-intro {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  margin-top: 16px;
+}
+
+.map-text {
+  flex: 1 1 0;
+  max-width: 38ch;
+}
+
+.diagram {
+  flex: 0 0 300px;
+  max-width: 300px;
+  margin: 0;
+}
+
+.diagram img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 760px) {
+  .map-intro {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .diagram {
+    max-width: 360px;
+    width: 100%;
+    margin: 20px 0;
+  }
+  .map-text {
+    max-width: 70ch;
+  }
+}
+
+.table-wrap {
+  margin-top: 18px;
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 860px;
+}
+
+thead th {
+  text-align: left;
+  font-weight: 600;
+  padding: 14px;
+  border-bottom: 1px solid var(--border);
+  background: var(--soft);
+  font-size: 0.95rem;
+}
+
+tbody td {
+  vertical-align: top;
+  padding: 14px;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.98rem;
+}
+
+tbody tr:last-child td { border-bottom: none; }
+
+.icon-cell { width: 56px; }
+
+.icon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.app-name { font-weight: 600; }
+
+.kicker {
+  font-size: 0.95rem;
+  color: var(--muted);
+  margin-bottom: 22px;
+}
+</style>
+</head>
+
+<body>
+<div class="page">
+
+<h1>日常の思考摩擦</h1>
+<p class="kicker">思考の行き場がないときに、静かに積み重なる小さな心の引っかかり。</p>
+
+<p>
+日常の思考摩擦は、解決すべき問題ではありません。<br>
+思考が着地する場所を持たないときに生まれる、
+静かな心の抵抗です。
+</p>
+
+<hr class="rule">
+
+<p class="subtle">
+問題でも、障害でもありません。<br>
+ただ、思考の行き場がないときに積み重なる、小さな心の引っかかりです。
+</p>
+
+<ul class="subtle">
+  <li>終わった会話を何度も思い返し、もっと良い返答を考えてしまう。</li>
+  <li>忘れてしまいそうで、タスクを頭の中に抱え続けている。</li>
+  <li>理由ははっきりしないが、圧迫感を感じている。</li>
+  <li>一日の中で、今ではない時間に重要なことを考えてしまう。</li>
+  <li>スマホが光るたびに、未返信のメッセージを思い出す。</li>
+  <li>どう扱うか決められず、アイデアを手放せない。</li>
+  <li>今すぐ決めなくていい判断を、何度も反芻してしまう。</li>
+  <li>誰にも求められていない説明を、頭の中で繰り返し練習する。</li>
+  <li>緊急なことがなくても、頭が「忙しい」と感じる。</li>
+  <li>休もうとしているのに、未来を心配してしまう。</li>
+  <li>今に集中したいのに、過去を何度も思い返す。</li>
+  <li>何かが終わっていない感覚のまま、警戒し続けている。</li>
+</ul>
+
+<p class="subtle">
+これらの瞬間に必要なのは修正ではありません。<br>
+必要なのは、着地する場所です。
+</p>
+
+<hr class="rule">
+
+<h2>思考はどこへ行くのか</h2>
+<p class="kicker">MINDBEBOP システムの静かな地図。</p>
+
+<div class="map-intro">
+
+  <div class="map-text">
+    <p class="subtle"><strong>思考が応答を必要としているとき</strong></p>
+
+    <p>
+      応答されていない思考は、摩擦を生みます。<br>
+      心が「扱われた」と感じるまで、繰り返されます。
+    </p>
+
+    <p>
+      こうした瞬間、思考は MindFlipOut で反転され、<br>
+      MindShoutOut で補強され、<br>
+      MindZoneOut でやさしく見直されます。<br>
+      注意を必要としなくなるまで。
+    </p>
+
+    <p>
+      それでも何かが残る場合、<br>
+      その反映は再び MindFlipOut に戻り、<br>
+      サイクルは自然に続きます。
+    </p>
+  </div>
+
+  <div class="diagram">
+    <picture>
+      <source srcset="https://raw.githubusercontent.com/kentaroyamauchiproject/mindbebop-web-assets/main/MXO_diagram_v1_INV_web.png" media="(prefers-color-scheme: dark)">
+      <img src="https://raw.githubusercontent.com/kentaroyamauchiproject/mindbebop-web-assets/main/MXO_diagram_v1_web.png" alt="MINDBEBOP システム図">
+    </picture>
+  </div>
+
+  <div class="map-text">
+    <p class="subtle"><strong>思考を運ぶ必要があるとき</strong></p>
+
+    <p>
+      変える必要のない思考もあります。<br>
+      失うことへの不安から、活動を続けているだけです。
+    </p>
+
+    <p>
+      重すぎて今は持てないが、<br>
+      まだ答えを出す時ではない思考。<br>
+      そうしたとき、MindFlipOut で一度触れます。<br>
+      解決するためではなく、何であるかを認識するために。
+    </p>
+
+    <p>
+      その後、MindShoutOut が重さを引き受け、<br>
+      MindZoneOut が保持せずに見ることを可能にします。<br>
+      手放さずに、休めるように。
+    </p>
+  </div>
+
+</div>
+
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+  <th></th>
+  <th>アプリ / フェーズ</th>
+  <th>中核となる考え方</th>
+  <th>使うタイミング</th>
+  <th>結果</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+  <td class="icon-cell"><img class="icon" src="https://raw.githubusercontent.com/kentaroyamauchiproject/mindbebop-web-assets/main/MB_MFO_Icon_1024-rounded.png"></td>
+  <td><span class="app-name">MindFlipOut</span><br><span class="subtle">計画</span></td>
+  <td>思考に着地点と応答を与える。</td>
+  <td>思考が何度も頭の中を回り続けるとき。</td>
+  <td>明確化：思考が書き出され、再構成され、精神的残渣を増やさなくなる。</td>
+</tr>
+
+<tr>
+  <td class="icon-cell"><img class="icon" src="https://raw.githubusercontent.com/kentaroyamauchiproject/mindbebop-web-assets/main/MB_MSO_Icon_1024-rounded.png"></td>
+  <td><span class="app-name">MindShoutOut</span><br><span class="subtle">脇に置く</span></td>
+  <td>思考が戻ってくることを信頼する。</td>
+  <td>重要だが、今は重すぎると感じるとき。</td>
+  <td>解放感：失う不安なく、思考を頭の外に置ける。</td>
+</tr>
+
+<tr>
+  <td class="icon-cell"><img class="icon" src="https://raw.githubusercontent.com/kentaroyamauchiproject/mindbebop-web-assets/main/MB_MZO_Icon_1024-rounded.png"></td>
+  <td><span class="app-name">MindZoneOut</span><br><span class="subtle">静けさ</span></td>
+  <td>心に静かな壁を与える。</td>
+  <td>刺激を減らし、意図的な静止が必要なとき。</td>
+  <td>沈静：思考がやわらぐか、自ら終点に到達する。</td>
+</tr>
+
+<tr>
+  <td class="icon-cell"><img class="icon" src="https://raw.githubusercontent.com/kentaroyamauchiproject/mindbebop-web-assets/main/MB_MBO_Icon_1024-rounded.png"></td>
+  <td><span class="app-name">MindBackOut</span><br><span class="subtle">基盤</span></td>
+  <td>精神的な制服から一歩離れる。</td>
+  <td>特定の思考ではなく、役割が圧力の原因のとき。</td>
+  <td>緩衝：役割由来の圧力が、思考に向かう前に和らぐ。</td>
+</tr>
+
+<tr>
+  <td class="icon-cell"><img class="icon" src="https://raw.githubusercontent.com/kentaroyamauchiproject/mindbebop-web-assets/main/MB_MEO_Icon_1024-rounded.png"></td>
+  <td><span class="app-name">MindEaseOut</span><br><span class="subtle">時間による解放</span></td>
+  <td>時間によって手放す。</td>
+  <td>思考が「今」ではなく、過去や未来に属しているとき。</td>
+  <td>緩和：現在で抱えなくなることで、思考がほどける。</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<hr class="rule">
+
+<div style="margin-top:52px; opacity:0.72; font-size:0.92rem;">
+  <p style="margin-bottom:12px;">
+    <a href="https://www.mindbebop.com/how-it-works" target="_blank">Read: How it works</a>
+  </p>
+  <p style="margin-bottom:12px;">
+    <a href="https://www.mindbebop.com/philosophy" target="_blank">Read: Philosophy</a>
+  </p>
+  Copyright © 2026 MINDBEBOP — All rights reserved.
+</div>
+
+</div>
+
+<script>
+(function () {
+  function applyDarkImages(isDark) {
+    document.querySelectorAll('img[data-dark]').forEach(function (img) {
+      img.src = isDark ? img.getAttribute('data-dark') : img.getAttribute('data-light') || img.src;
+    });
+  }
+  var media = window.matchMedia('(prefers-color-scheme: dark)');
+  applyDarkImages(media.matches);
+  media.addEventListener('change', function (e) { applyDarkImages(e.matches); });
+})();
+</script>
+
+</body>
+</html>
