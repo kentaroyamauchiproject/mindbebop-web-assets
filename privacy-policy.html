@@ -17,14 +17,19 @@
 <meta property="og:url" content="https://jp.mindbebop.com/privacy">
 
 <style>
-    /* MINDBEBOP Navigation */
+ /* MINDBEBOP Navigation */
 .mb-nav {
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 32px;
+}
+
+.mb-nav-inner {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 16px 20px 16px;
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
-  margin-bottom: 32px;
-  padding-bottom: 16px;
-  border-bottom: 1px solid var(--border);
   font-size: 0.95rem;
 }
 
@@ -38,6 +43,7 @@
   opacity: 1;
   text-decoration: underline;
 }
+
 :root {
     --bg: #ffffff;
     --fg: #000000;
@@ -103,12 +109,14 @@ hr {
 
 <body>
 <nav class="mb-nav">
-  <a href="index.html">ホーム</a>
-  <a href="how-it-works.html">しくみ</a>
-  <a href="everyday-thought-friction.html">日常の思考摩擦</a>
-  <a href="philosophy.html">哲学</a>
-  <a href="faq.html">FAQ</a>
-  <a href="privacy-policy.html">プライバシーポリシー</a>
+  <div class="mb-nav-inner">
+    <a href="index.html">ホーム</a>
+    <a href="how-it-works.html">しくみ</a>
+    <a href="everyday-thought-friction.html">日常の思考摩擦</a>
+    <a href="philosophy.html">哲学</a>
+    <a href="faq.html">FAQ</a>
+    <a href="privacy-policy.html">プライバシーポリシー</a>
+  </div>
 </nav>
 <div class="page">
 
