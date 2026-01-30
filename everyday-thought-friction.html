@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>MINDBEBOP — Where thoughts go</title>
+
+<link rel="canonical" href="https://www.mindbebop.com/where-thoughts-go">
+<meta name="robots" content="index, follow">
+
+<meta name="description" content="A quiet map of where thoughts go inside the MINDBEBOP system — a simple guide to which tool to use, when, and why.">
+
+<meta property="og:title" content="MINDBEBOP — Where thoughts go">
+<meta property="og:description" content="Different thoughts need different places to land: flip, set aside, quiet, return, step out of roles, or release by time.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.mindbebop.com/where-thoughts-go">
+
+<style>
+:root {
+  --bg: #ffffff;
+  --fg: #000000;
+  --border: #333333;
+  --muted: rgba(0,0,0,0.72);
+  --soft: #F2F2F7; /* table header background (light mode) */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #000000;
+    --fg: #f2f2f7;
+    --border: rgba(242, 242, 247, 0.25);
+    --muted: rgba(242,242,247,0.72);
+    --soft: #2C2C2C; /* table header background (dark mode) */
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background-color: var(--bg);
+  color: var(--fg);
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.page {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 40px 20px 80px;
+}
+
+h1 {
+  font-weight: 600;
+  font-size: 2rem;
+  margin: 0 0 14px;
+}
+
+h2 {
+  font-weight: 600;
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+
+p { margin: 0 0 16px; }
+
+a { color: inherit; text-decoration: underline; }
+
+.subtle { color: var(--muted); }
+
+.rule {
+  border: none;
+  border-bottom: 1px solid var(--border);
+  margin: 40px 0;
+}
+
+/* Map intro layout: left text / center diagram / right text */
+.map-intro {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  margin-top: 16px;
+}
+
+.map-text {
+  flex: 1 1 0;
+  max-width: 38ch;
+}
+
+.diagram {
+  flex: 0 0 300px;
+  max-width: 300px;
+  margin: 0;
+}
+
+.diagram img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Mobile: stack */
+@media (max-width: 760px) {
+  .map-intro {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .diagram {
+    max-width: 360px;
+    width: 100%;
+    margin: 20px 0;
+  }
+
+  .map-text {
+    max-width: 70ch;
+  }
+}
+
+/* Table */
+.table-wrap {
+  margin-top: 18px;
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 860px;
+}
+
+thead th {
+  text-align: left;
+  font-weight: 600;
+  padding: 14px;
+  border-bottom: 1px solid var(--border);
+  background: var(--soft);
+  font-size: 0.95rem;
+}
+
+tbody td {
+  vertical-align: top;
+  padding: 14px;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.98rem;
+}
+
+tbody tr:last-child td { border-bottom: none; }
+
+.icon-cell { width: 56px; }
+
+.icon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.app-name { font-weight: 600; }
+
+.small {
+  font-size: 0.92rem;
+  color: var(--muted);
+  margin-top: 10px;
+}
+
+.kicker {
+  font-size: 0.95rem;
+  color: var(--muted);
+  margin-bottom: 22px;
+}
+</style>
+</head>
+
+<body>
+<div class="page">
+
+<h1>Everyday thought friction</h1>
+<p class="kicker">The small mental drag that builds up when thoughts have nowhere to go.</p>
+
+<p>
+Everyday thought friction isn’t a problem to solve.
+It’s the quiet mental drag that builds up when thoughts have nowhere to land.
+</p>
+
+<hr class="rule">
+
+<!-- ===================== -->
+<!-- Everyday Thought Friction -->
+<!-- ===================== -->
+
+<p class="subtle">
+Not problems. Not disorders. Just the small mental drag that builds up when thoughts have nowhere to go.
+</p>
+
+<ul class="subtle">
+  <li>Replaying a conversation long after it ended — thinking of better responses.</li>
+  <li>Carrying a task in your head because you’re afraid you’ll forget it.</li>
+  <li>Feeling pressure without knowing exactly why.</li>
+  <li>Thinking about something important at the wrong time of day.</li>
+  <li>Remembering an unresolved message every time your phone lights up.</li>
+  <li>Holding onto an idea because you don’t yet know what to do with it.</li>
+  <li>Looping on a decision that doesn’t need to be made right now.</li>
+  <li>Mentally rehearsing explanations no one has asked for.</li>
+  <li>Feeling mentally “busy” even when nothing urgent is happening.</li>
+  <li>Worrying about the future while trying to rest.</li>
+  <li>Revisiting the past while trying to focus on the present.</li>
+  <li>Staying alert because something feels unfinished.</li>
+</ul>
+
+<p class="subtle">
+These moments don’t require fixing — they require a place to land.
+</p>
+
+<hr class="rule">
+
+<h2>Where thoughts go</h2>
+<p class="kicker">A quiet map of the MINDBEBOP system.</p>
+
+<div class="map-intro">
+
+  <!-- LEFT BLOCK -->
+  <div class="map-text">
+    <p class="subtle"><strong>When a thought needs a response</strong></p>
+
+    <p>
+      Some thoughts create friction because they haven’t been answered.
+      They repeat until the mind feels they’ve been handled.
+    </p>
+
+    <p>
+      In these moments, a thought can be flipped in MindFlipOut,
+      reinforced through MindShoutOut,
+      and gently revisited in MindZoneOut —
+      until it no longer needs attention.
+    </p>
+
+    <p>
+      If something remains, its reflection can return to MindFlipOut,
+      and the cycle can continue naturally.
+    </p>
+  </div>
+
+  <!-- CENTER DIAGRAM -->
+  <div class="diagram">
+    <picture>
+      <source
+        srcset="/image/MXO_diagram_v1_INV_web.png"
+        media="(prefers-color-scheme: dark)">
+      <img
+        src="/image/MXO_diagram_v1_web.png"
+        alt="MINDBEBOP system diagram">
+    </picture>
+  </div>
+
+  <!-- RIGHT BLOCK -->
+  <div class="map-text">
+    <p class="subtle"><strong>When a thought needs to be carried</strong></p>
+
+    <p>
+      Other thoughts don’t need to change.
+      They stay active because you’re afraid of losing them.
+    </p>
+
+    <p>
+      Sometimes a thought is too heavy to carry,
+      but not ready to be answered yet.
+      In those moments, it can be briefly touched in MindFlipOut —
+      not to resolve it, but to acknowledge what it is.
+    </p>
+
+    <p>
+      From there, MindShoutOut can carry the weight,
+      while MindZoneOut lets the thought be seen without holding it —
+      so the mind can rest without letting go.
+    </p>
+  </div>
+
+</div>
+
+<div class="table-wrap" role="region" aria-label="Where thoughts go table">
+<table>
+<thead>
+<tr>
+  <th></th>
+  <th>App / Phase</th>
+  <th>Core Philosophy</th>
+  <th>When to Use It</th>
+  <th>Result</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+  <td class="icon-cell">
+    <img class="icon"
+      src="/image/MB_MFO_Icon_1024-rounded.png"
+      data-dark="/image/MB_MFO_Icon_1024_INV-rounded.png"
+      alt="MindFlipOut icon">
+  </td>
+  <td><span class="app-name">MindFlipOut</span><br><span class="subtle">Planning</span></td>
+  <td>Give thoughts a place to land — and a response.</td>
+  <td>When a thought keeps repeating or circling in your head.</td>
+  <td>Clarity: The thought is written down and reframed so it no longer keeps adding mental residue.</td>
+</tr>
+
+<tr>
+  <td class="icon-cell">
+    <img class="icon"
+      src="/image/MB_MSO_Icon_1024-rounded.png"
+      data-dark="/image/MB_MSO_Icon_1024_INV-rounded.png"
+      alt="MindShoutOut icon">
+  </td>
+  <td><span class="app-name">MindShoutOut</span><br><span class="subtle">Set Aside</span></td>
+  <td>Trust the thought to come back.</td>
+  <td>When a thought feels important, but too heavy to carry right now.</td>
+  <td>Relief: The thought is placed outside your head without fear of losing it.</td>
+</tr>
+
+<tr>
+  <td class="icon-cell">
+    <img class="icon"
+      src="/image/MB_MZO_Icon_1024-rounded.png"
+      data-dark="/image/MB_MZO_Icon_1024_INV-rounded.png"
+      alt="MindZoneOut icon">
+  </td>
+  <td><span class="app-name">MindZoneOut</span><br><span class="subtle">Quiet</span></td>
+  <td>Give the mind a quiet wall.</td>
+  <td>When your head needs fewer signals and intentional stillness.</td>
+  <td>Settling: Thoughts often soften or reach their own stopping point.</td>
+</tr>
+
+<tr>
+  <td class="icon-cell">
+    <img class="icon"
+      src="/image/MB_MBO_Icon_1024-rounded.png"
+      data-dark="/image/MB_MBO_Icon_1024_INV-rounded.png"
+      alt="MindBackOut icon">
+  </td>
+  <td><span class="app-name">MindBackOut</span><br><span class="subtle">Foundation</span></td>
+  <td>Step out of the mental uniform.</td>
+  <td>When pressure comes from roles rather than a specific thought.</td>
+  <td>Buffering: Role-based pressure softens before thoughts need attention.</td>
+</tr>
+
+<tr>
+  <td class="icon-cell">
+    <img class="icon"
+      src="/image/MB_MEO_Icon_1024-rounded.png"
+      data-dark="/image/MB_MEO_Icon_1024_INV-rounded.png"
+      alt="MindEaseOut icon">
+  </td>
+  <td><span class="app-name">MindEaseOut</span><br><span class="subtle">Time-based release</span></td>
+  <td>Let go by time.</td>
+  <td>When a thought belongs to the past or future, not now.</td>
+  <td>Ease: The thought loosens by no longer being carried in the present.</td>
+</tr>
+
+</tbody>
+</table>
+</div>
+
+<hr class="rule">
+
+<div style="margin-top:52px; opacity:0.72; font-size:0.92rem;">
+  <p style="margin-bottom:12px;">
+    <a href="https://www.mindbebop.com/how-it-works" target="_blank">Read: How it works</a>
+  </p>
+  <p style="margin-bottom:12px;">
+    <a href="https://www.mindbebop.com/philosophy" target="_blank">Read: Philosophy</a>
+  </p>
+  Copyright © 2026 MINDBEBOP — All rights reserved.
+</div>
+
+</div>
+
+<script>
+(function () {
+  function applyDarkImages(isDark) {
+    document.querySelectorAll('img[data-dark]').forEach(function (img) {
+      img.src = isDark
+        ? img.getAttribute('data-dark')
+        : img.getAttribute('data-light') || img.src;
+    });
+  }
+
+  function init() {
+    var media = window.matchMedia('(prefers-color-scheme: dark)');
+    applyDarkImages(media.matches);
+    media.addEventListener('change', function (e) {
+      applyDarkImages(e.matches);
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,252 @@
+<!-- founders-blog.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>MINDBEBOP — Founder’s Blog</title>
+  <link rel="canonical" href="https://www.mindbebop.com/founders-blog" />
+  <meta name="robots" content="index, follow" />
+
+  <meta name="description" content="Founder’s Blog — occasional notes from the founder of MINDBEBOP. Quiet thoughts on building ultralight tools for everyday thought care." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="MINDBEBOP — Founder’s Blog" />
+  <meta property="og:description" content="Occasional notes from the founder of MINDBEBOP — ultralight tools for everyday thought care." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.mindbebop.com/founders-blog" />
+
+  <style>
+    :root {
+  --bg: #ffffff;
+  --fg: #1c1c1e;
+  --muted: rgba(28, 28, 30, 0.68);
+  --hairline: rgba(28, 28, 30, 0.12);
+  --card: #F2F2F7; /* blog entry background (light mode) */
+  --max: 860px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #000000;
+    --fg: #f2f2f7;
+    --muted: rgba(242, 242, 247, 0.72);
+    --hairline: rgba(242, 242, 247, 0.14);
+    --card: #2C2C2C; /* blog entry background (dark mode) */
+  }
+}
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      line-height: 1.55;
+    }
+
+    /* --------------------------------------------------
+       GLOBAL NAV (kept minimal on this page)
+    -------------------------------------------------- */
+
+    .nav {
+      position: sticky;
+      top: 0;
+      background: color-mix(in srgb, var(--bg) 92%, transparent);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--hairline);
+      z-index: 10;
+    }
+
+    .nav-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand a {
+      text-decoration: none;
+      color: var(--fg);
+      font-weight: 600;
+      letter-spacing: 0.2px;
+    }
+
+.post p + p {
+  margin-top: 12px;
+}
+
+.signature {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 14px;
+}
+.signature img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  opacity: 0.85;
+}
+
+    /* Hide right-side nav completely on Founder’s Blog */
+    .nav-links {
+      display: none;
+    }
+
+    /* --------------------------------------------------
+       CONTENT
+    -------------------------------------------------- */
+
+    main {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 36px 18px 60px;
+    }
+
+    h1 {
+      font-size: 28px;
+      margin: 0 0 10px;
+      letter-spacing: -0.2px;
+    }
+
+    .intro {
+      color: var(--muted);
+      max-width: 70ch;
+      margin-bottom: 28px;
+      font-size: 16px;
+    }
+
+    /* --------------------------------------------------
+       POSTS
+    -------------------------------------------------- */
+
+    .post {
+      border: 1px solid var(--hairline);
+      border-radius: 18px;
+      padding: 18px 18px 16px;
+      background: var(--card);
+      margin-bottom: 16px;
+    }
+
+    .post h2 {
+      font-size: 18px;
+      margin: 0 0 6px;
+      letter-spacing: -0.1px;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 10px;
+    }
+
+    .post p {
+      margin: 0;
+      max-width: 80ch;
+    }
+
+    footer {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 18px;
+      border-top: 1px solid var(--hairline);
+      color: var(--muted);
+      font-size: 13px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <header class="nav">
+    <div class="nav-inner">
+      <div class="brand">
+        <a href="/">MINDBEBOP</a>
+      </div>
+      <!-- intentionally empty: no right-side menu on Founder’s Blog -->
+      <nav class="nav-links"></nav>
+    </div>
+  </header>
+
+  <!-- CONTENT -->
+  <main>
+    <h1>Founder’s Blog</h1>
+    <p class="intro">
+      Occasional notes from the founder of MINDBEBOP.
+      Not updates, not announcements — just a place to think out loud, <em>lightly</em>.
+    </p>
+
+    <!-- Entry -->
+ <article class="post">
+  <h2>Nothing Needs You Right Now</h2>
+  <div class="meta">January 19, 2026</div>
+
+  <p>
+    People think pressure comes from problems.
+It doesn’t.
+<p>
+Pressure comes from continuity.<br>
+From carrying thoughts longer than they need to exist.
+</p>
+<p>
+  Most thoughts are temporary guests that never learned how to leave.
+</p>
+  <p>
+They knock.<br>
+You answer.<br>
+Then you offer them a chair, a drink, a future.
+</p>
+<p>
+No one told you that was optional.
+</P>
+  <div class="signature">
+  <img
+    src="/image/KentaroYamauchi_app_v2.png"
+    alt="Kentaro Yamauchi">
+  <span>— Kentaro</span>
+</div>
+</article>
+<p><br>
+    <article class="post">
+  <h2>Doing less on purpose</h2>
+  <div class="meta">January 14, 2026</div>
+
+  <p>
+    I kept looking for an app that would help me “deal with my thoughts,” but most tools
+    felt like another job: track this, reflect on that, improve something, stay consistent.
+<p>
+  I wanted the opposite — something that asks almost nothing.
+</p>
+<p>
+  Think Notepad or TextEdit, which I used to dump my thoughts (mostly tasks),
+  and that still helps the mind feel a little cleaner.
+</p>
+  </p>
+  <p>
+    MINDBEBOP is my attempt at that: a few ultralight actions that reduce thought residue
+    without turning life into a project. To me “thought care” is simply brushing off thought friction.
+  </p>
+  <div class="signature">
+  <img
+    src="/image/KentaroYamauchi_app_v2.png"
+    alt="Kentaro Yamauchi">
+  <span>— Kentaro</span>
+</div>
+</article>
+  </main>
+
+  <footer>
+    Copyright © 2026 MINDBEBOP · Founder’s Blog
+  </footer>
+
+</body>
+</html>
