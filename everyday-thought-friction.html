@@ -25,6 +25,7 @@
   --fg: #000000;
   --border: #333333;
   --muted: rgba(0,0,0,0.75);
+  --soft: #F2F2F7;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -33,12 +34,17 @@
     --fg: #f2f2f7;
     --border: rgba(242,242,247,0.25);
     --muted: rgba(242,242,247,0.75);
+    --soft: #2C2C2C;
   }
 }
 
 /* =========================
-   BASE
+   RESET / BASE
    ========================= */
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   background: var(--bg);
@@ -95,7 +101,7 @@ a {
 }
 
 /* =========================
-   MENU
+   MENU (MOBILE)
    ========================= */
 .mb-menu {
   position: fixed;
@@ -103,7 +109,7 @@ a {
   padding: 80px 24px;
   display: none;
   flex-direction: column;
-  background: rgba(0, 0, 0, 0.04); /* fallback */
+  background: rgba(0,0,0,0.04);
   background: color-mix(in srgb, var(--bg) 92%, transparent);
   backdrop-filter: blur(6px);
   z-index: 1000;
@@ -163,16 +169,16 @@ a {
   color: var(--muted);
 }
 
-.rule {
-  border: none;
-  border-bottom: 1px solid var(--border);
-  margin: 48px 0;
-}
-
 .kicker {
   font-size: 1.05rem;
   opacity: 0.75;
   margin-top: -8px;
+}
+
+.rule {
+  border: none;
+  border-bottom: 1px solid var(--border);
+  margin: 48px 0;
 }
 
 ul.subtle {
@@ -180,7 +186,7 @@ ul.subtle {
 }
 
 /* =========================
-   MAP / DIAGRAM
+   MAP INTRO (TEXT / DIAGRAM / TEXT)
    ========================= */
 .map-intro {
   display: flex;
@@ -197,13 +203,30 @@ ul.subtle {
 .diagram {
   flex: 0 0 300px;
   max-width: 300px;
-  margin: 0;
 }
 
 .diagram img {
   width: 100%;
   height: auto;
   display: block;
+}
+
+/* Mobile stack */
+@media (max-width: 760px) {
+  .map-intro {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .diagram {
+    max-width: 360px;
+    width: 100%;
+    margin: 20px 0;
+  }
+
+  .map-text {
+    max-width: 70ch;
+  }
 }
 
 /* =========================
@@ -222,6 +245,26 @@ table {
   min-width: 860px;
 }
 
+thead th {
+  text-align: left;
+  font-weight: 600;
+  padding: 14px;
+  border-bottom: 1px solid var(--border);
+  background: var(--soft);
+  font-size: 0.95rem;
+}
+
+tbody td {
+  vertical-align: top;
+  padding: 14px;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.98rem;
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
 .icon-cell {
   width: 56px;
 }
@@ -230,26 +273,6 @@ table {
   width: 40px;
   height: 40px;
   object-fit: contain;
-}
-
-/* =========================
-   MOBILE
-   ========================= */
-@media (max-width: 760px) {
-  .map-intro {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .diagram {
-    max-width: 360px;
-    width: 100%;
-    margin: 20px 0;
-  }
-
-  .map-text {
-    max-width: 70ch;
-  }
 }
 </style>
 
