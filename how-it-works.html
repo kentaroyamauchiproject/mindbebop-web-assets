@@ -17,6 +17,92 @@
 <meta property="og:url" content="https://www.mindbebop.com/how-it-works">
 
 <style>
+/* =========================
+   MINDBEBOP MENU STYLES
+   ========================= */
+
+.mb-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border, rgba(0,0,0,0.2));
+}
+
+.mb-header-inner {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mb-brand {
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--fg);
+  letter-spacing: 0.2px;
+}
+
+.mb-menu-button {
+  font-size: 22px;
+  background: none;
+  border: none;
+  color: var(--fg);
+  cursor: pointer;
+}
+
+/* Fullscreen menu */
+.mb-menu {
+  position: fixed;
+  inset: 0;
+  background: var(--bg);
+  color: var(--fg);
+  display: none;
+  z-index: 2000;
+}
+
+.mb-menu[aria-hidden="false"] {
+  display: block;
+}
+
+.mb-close {
+  position: absolute;
+  top: 18px;
+  right: 22px;
+  font-size: 28px;
+  background: none;
+  border: none;
+  color: var(--fg);
+  cursor: pointer;
+}
+
+.mb-menu-list {
+  list-style: none;
+  padding: 80px 24px;
+  margin: 0;
+  max-width: 520px;
+}
+
+.mb-menu-list li {
+  margin-bottom: 22px;
+}
+
+.mb-menu-list a {
+  text-decoration: none;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--fg);
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --border: rgba(242,242,247,0.25);
+  }
+}
+
 :root {
   --bg: #ffffff;
   --fg: #000000;
@@ -99,6 +185,34 @@ a {
 </head>
 
 <body>
+
+<!-- MINDBEBOP MENU -->
+<header class="mb-header">
+  <div class="mb-header-inner">
+    <a href="index.html" class="mb-brand">MINDBEBOP</a>
+
+    <button class="mb-menu-button" aria-label="Open menu">
+      ☰
+    </button>
+  </div>
+</header>
+
+<nav class="mb-menu" aria-hidden="true">
+  <button class="mb-close" aria-label="Close menu">×</button>
+
+  <ul class="mb-menu-list">
+    <li><a href="how-it-works.html">How it works</a></li>
+    <li><a href="everyday-thought-friction.html">Everyday Thought Friction</a></li>
+    <li><a href="refusals.html">Refusals</a></li>
+    <li><a href="philosophy.html">Philosophy</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="press-background.html">Press & Background</a></li>
+    <li><a href="founders-blog.html">Founder’s Blog</a></li>
+  </ul>
+</nav>
+
 <div class="page">
 
 <h1>How it works</h1>
