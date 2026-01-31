@@ -82,7 +82,26 @@ a:hover {
 }
 
 .mb-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  font-size: 1.15rem;
+}
+
+.mb-brand img {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+}
+
+.mb-brand-name {
   font-weight: 600;
+}
+
+.mb-brand-tagline {
+  opacity: 0.75;
+  font-weight: 400;
 }
 
 .mb-hamburger {
@@ -198,7 +217,14 @@ h1 {
 <!-- MINDBEBOP MENU -->
 <div class="mb-nav">
   <header class="mb-header">
-    <a class="mb-brand" href="https://kentaroyamauchiproject.github.io/mindbebop-web-assets/">MINDBEBOP</a>
+<a class="mb-brand" href="https://kentaroyamauchiproject.github.io/mindbebop-web-assets/">
+  <img
+    src="image/MB_LOGO_V5_1024.png"
+    data-dark="image/MB_LOGO_V5_1024_INV.png"
+    alt="MINDBEBOP logo">
+  <span class="mb-brand-name">MINDBEBOP</span>
+  <span class="mb-brand-tagline">— Thoughts, as they happen</span>
+</a>
 
     <button class="mb-hamburger" aria-expanded="false" aria-controls="mb-menu">
       <span class="mb-open">☰</span>
