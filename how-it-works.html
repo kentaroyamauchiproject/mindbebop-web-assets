@@ -211,6 +211,15 @@ p { margin-bottom: 16px; }
   height: 40px;
   object-fit: contain;
 }
+/* Prevent layout shift when menu opens */
+html {
+  overflow-y: scroll;
+}
+
+body.menu-open {
+  position: fixed;
+  width: 100%;
+}
 </style>
 </head>
 
@@ -556,16 +565,17 @@ it’s to help them come to an end.
 
   btn.addEventListener('click', () => {
     const open = btn.getAttribute('aria-expanded') === 'true';
+
     btn.setAttribute('aria-expanded', String(!open));
     menu.setAttribute('aria-hidden', String(open));
-    document.body.style.overflow = open ? '' : 'hidden';
+    document.body.classList.toggle('menu-open', !open);
   });
 
   menu.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
       btn.setAttribute('aria-expanded', 'false');
       menu.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = '';
+      document.body.classList.remove('menu-open');
     });
   });
 })();
