@@ -142,11 +142,6 @@ a {
     font-size: 0.95rem;
     margin: 0;
     letter-spacing: 0.02em;
-  }
-}
-
-@media (min-width: 900px) {
-  .mb-menu a {
     transition: opacity 0.15s ease;
   }
 
@@ -184,6 +179,21 @@ ul.subtle {
   padding-left: 18px;
 }
 
+/* =========================
+   MAP / DIAGRAM
+   ========================= */
+.map-intro {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  margin-top: 16px;
+}
+
+.map-text {
+  flex: 1 1 0;
+  max-width: 38ch;
+}
+
 .diagram {
   flex: 0 0 300px;
   max-width: 300px;
@@ -196,6 +206,9 @@ ul.subtle {
   display: block;
 }
 
+/* =========================
+   TABLE
+   ========================= */
 .table-wrap {
   margin-top: 18px;
   overflow-x: auto;
@@ -209,7 +222,9 @@ table {
   min-width: 860px;
 }
 
-.icon-cell { width: 56px; }
+.icon-cell {
+  width: 56px;
+}
 
 .icon {
   width: 40px;
@@ -217,6 +232,9 @@ table {
   object-fit: contain;
 }
 
+/* =========================
+   MOBILE
+   ========================= */
 @media (max-width: 760px) {
   .map-intro {
     flex-direction: column;
