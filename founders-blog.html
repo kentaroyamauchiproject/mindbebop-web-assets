@@ -349,6 +349,24 @@ No one told you that was optional.
   <footer>
     Copyright © 2026 MINDBEBOP · Founder’s Blog
   </footer>
+<script>
+(function () {
+  const openBtn = document.querySelector('.mb-menu-button');
+  const closeBtn = document.querySelector('.mb-close');
+  const menu = document.querySelector('.mb-menu');
 
+  if (!openBtn || !closeBtn || !menu) return;
+
+  openBtn.addEventListener('click', () => {
+    menu.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  });
+
+  closeBtn.addEventListener('click', () => {
+    menu.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  });
+})();
+</script>
 </body>
 </html>
