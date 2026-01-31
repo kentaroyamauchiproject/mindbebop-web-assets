@@ -18,92 +18,8 @@
 
 <style>
 /* =========================
-   MINDBEBOP MENU STYLES
+   VARIABLES
    ========================= */
-.mb-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px 20px;
-}
-
-.mb-brand {
-  font-weight: 600;
-  text-decoration: none;
-  color: var(--fg);
-}
-
-.mb-hamburger {
-  font-size: 22px;
-  background: none;
-  border: none;
-  color: var(--fg);
-  cursor: pointer;
-}
-
-/* Hamburger icon swap */
-.mb-hamburger .mb-close {
-  display: none;
-}
-
-.mb-hamburger[aria-expanded="true"] .mb-open {
-  display: none;
-}
-
-.mb-hamburger[aria-expanded="true"] .mb-close {
-  display: inline;
-}
-
-/* OVERLAY MENU (default: hidden) */
-.mb-menu {
-  position: fixed;
-  inset: 0;
-  padding: 80px 24px;
-  display: none;
-  flex-direction: column;
-  background: color-mix(in srgb, var(--bg) 92%, black);
-  backdrop-filter: blur(6px);
-  z-index: 1000;
-}
-
-.mb-menu[aria-hidden="false"] {
-  display: flex;
-}
-
-.mb-menu a {
-  font-size: 1.4rem;
-  margin-bottom: 20px;
-  color: var(--fg);
-  text-decoration: none;
-}
-
-.mb-menu a[aria-current="page"] {
-  text-decoration: underline;
-  opacity: 0.9;
-}
-
-/* DESKTOP */
-@media (min-width: 900px) {
-  .mb-hamburger {
-    display: none;
-  }
-
-  .mb-menu {
-    position: static;
-    display: flex !important;
-    flex-direction: row;
-    gap: 28px;
-    padding: 0;
-    backdrop-filter: none;
-    background: none;
-  }
-
-  .mb-menu a {
-    font-size: 0.95rem;
-    margin: 0;
-  }
-}
-
 :root {
   --bg: #ffffff;
   --fg: #000000;
@@ -120,6 +36,9 @@
   }
 }
 
+/* =========================
+   BASE
+   ========================= */
 body {
   margin: 0;
   background: var(--bg);
@@ -128,6 +47,98 @@ body {
   line-height: 1.6;
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  opacity: 0.6;
+}
+
+/* =========================
+   NAV CONTAINER
+   ========================= */
+.mb-nav {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 16px 20px 0;
+}
+
+/* =========================
+   HEADER / MENU
+   ========================= */
+.mb-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mb-brand {
+  font-weight: 600;
+}
+
+.mb-hamburger {
+  font-size: 22px;
+  background: none;
+  border: none;
+  color: var(--fg);
+  cursor: pointer;
+}
+
+.mb-hamburger .mb-close { display: none; }
+.mb-hamburger[aria-expanded="true"] .mb-open { display: none; }
+.mb-hamburger[aria-expanded="true"] .mb-close { display: inline; }
+
+/* =========================
+   OVERLAY MENU
+   ========================= */
+.mb-menu {
+  position: fixed;
+  inset: 0;
+  padding: 80px 24px;
+  display: none;
+  flex-direction: column;
+  background: color-mix(in srgb, var(--bg) 92%, transparent);
+  backdrop-filter: blur(6px);
+  z-index: 1000;
+}
+
+.mb-menu[aria-hidden="false"] { display: flex; }
+
+.mb-menu a {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+}
+
+.mb-menu a[aria-current="page"] { opacity: 0.6; }
+
+/* =========================
+   DESKTOP NAV
+   ========================= */
+@media (min-width: 900px) {
+  .mb-hamburger { display: none; }
+
+  .mb-menu {
+    position: static;
+    display: flex !important;
+    flex-direction: row;
+    gap: 28px;
+    padding: 0;
+    backdrop-filter: none;
+    background: none;
+  }
+
+  .mb-menu a {
+    font-size: 0.95rem;
+    margin: 0;
+    letter-spacing: 0.02em;
+  }
+}
+
+/* =========================
+   PAGE
+   ========================= */
 .page {
   max-width: 780px;
   margin: 0 auto;
@@ -155,14 +166,7 @@ h3 {
 
 p { margin-bottom: 16px; }
 
-a {
-  color: inherit;
-  text-decoration: underline;
-}
-
-.subtle {
-  color: var(--muted);
-}
+.subtle { color: var(--muted); }
 
 .rule {
   border: none;
@@ -188,30 +192,31 @@ a {
 <body>
 
 <!-- MINDBEBOP MENU -->
-<header class="mb-header">
-  <a class="mb-brand" href="https://kentaroyamauchiproject.github.io/mindbebop-web-assets/">
-    MINDBEBOP
-  </a>
+<div class="mb-nav">
+  <header class="mb-header">
+    <a class="mb-brand" href="https://kentaroyamauchiproject.github.io/mindbebop-web-assets/">MINDBEBOP</a>
 
-  <button class="mb-hamburger" aria-expanded="false" aria-controls="mb-menu">
-    <span class="mb-open">☰</span>
-    <span class="mb-close">×</span>
-  </button>
-</header>
+    <button class="mb-hamburger" aria-expanded="false" aria-controls="mb-menu">
+      <span class="mb-open">☰</span>
+      <span class="mb-close">×</span>
+    </button>
+  </header>
 
-<nav id="mb-menu" class="mb-menu" aria-hidden="true">
-  <a href="how-it-works.html" aria-current="page">How it works</a>
-  <a href="everyday-thought-friction.html">Everyday Thought Friction</a>
-  <a href="refusals.html">Refusals</a>
-  <a href="philosophy.html">Philosophy</a>
-  <a href="gallery.html">Gallery</a>
-  <a href="privacy-policy.html">Privacy Policy</a>
-  <a href="faq.html">FAQ</a>
-  <a href="press-background.html">Press & Background</a>
-  <a href="founders-blog.html">Founder’s Blog</a>
-</nav>
+  <nav id="mb-menu" class="mb-menu" aria-hidden="true">
+    <a href="how-it-works.html" aria-current="page">How it works</a>
+    <a href="everyday-thought-friction.html">Everyday Thought Friction</a>
+    <a href="refusals.html">Refusals</a>
+    <a href="philosophy.html">Philosophy</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="privacy-policy.html">Privacy Policy</a>
+    <a href="faq.html">FAQ</a>
+    <a href="press-background.html">Press & Background</a>
+    <a href="founders-blog.html">Founder’s Blog</a>
+  </nav>
+</div>
 
 <div class="page">
+<!-- CONTENT UNCHANGED -->
 
 <h1>How it works</h1>
 <p class="subtle">A quiet overview of the MINDBEBOP mind-brushing kit.</p>
