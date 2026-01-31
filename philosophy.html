@@ -3,19 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <!-- Favicons -->
-<link rel="icon" href="/favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 
 <title>MINDBEBOP — Philosophy</title>
 <link rel="canonical" href="https://www.mindbebop.com/philosophy">
 <meta name="robots" content="index, follow">
-
 <meta name="description" content="The philosophy behind MINDBEBOP — a quiet approach to reducing everyday thought friction.">
 
 <style>
+/* =========================
+   VARIABLES
+   ========================= */
 :root {
   --bg: #ffffff;
   --fg: #000000;
@@ -32,12 +35,20 @@
   }
 }
 
+/* =========================
+   BASE
+   ========================= */
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   background: var(--bg);
   color: var(--fg);
   font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 1.6;
+  overflow-y: scroll; /* prevents layout jump */
 }
 
 a {
@@ -49,7 +60,9 @@ a:hover {
   opacity: 0.6;
 }
 
-/* NAV WRAPPER — THIS IS THE CRITICAL PART */
+/* =========================
+   NAV
+   ========================= */
 .mb-nav {
   max-width: 780px;
   margin: 0 auto;
@@ -66,7 +79,6 @@ a:hover {
   display: flex;
   align-items: center;
   gap: 10px;
-  text-decoration: none;
   font-size: 1.15rem;
 }
 
@@ -97,6 +109,9 @@ a:hover {
 .mb-hamburger[aria-expanded="true"] .mb-open { display: none; }
 .mb-hamburger[aria-expanded="true"] .mb-close { display: inline; }
 
+/* =========================
+   MENU
+   ========================= */
 .mb-menu {
   position: fixed;
   inset: 0;
@@ -108,15 +123,22 @@ a:hover {
   z-index: 1000;
 }
 
-.mb-menu[aria-hidden="false"] { display: flex; }
+.mb-menu[aria-hidden="false"] {
+  display: flex;
+}
 
 .mb-menu a {
   font-size: 1.4rem;
   margin-bottom: 20px;
 }
 
+/* =========================
+   DESKTOP NAV
+   ========================= */
 @media (min-width: 900px) {
-  .mb-hamburger { display: none; }
+  .mb-hamburger {
+    display: none;
+  }
 
   .mb-menu {
     position: static;
@@ -133,8 +155,10 @@ a:hover {
     margin: 0;
     letter-spacing: 0.02em;
   }
-  /* =========================
-   PAGE (CANONICAL — MUST MATCH how-it-works.html)
+}
+
+/* =========================
+   PAGE
    ========================= */
 .page {
   max-width: 780px;
@@ -168,26 +192,22 @@ p {
   border-bottom: 1px solid var(--border);
   margin: 48px 0;
 }
-}
-* {
-  box-sizing: border-box;
-}
 </style>
 </head>
 
 <body>
 
-<!-- MINDBEBOP MENU -->
+<!-- NAV -->
 <div class="mb-nav">
   <header class="mb-header">
-<a class="mb-brand" href="https://kentaroyamauchiproject.github.io/mindbebop-web-assets/">
-  <img
-    src="image/MB_LOGO_V5_1024.png"
-    data-dark="image/MB_LOGO_V5_1024_INV.png"
-    alt="MINDBEBOP logo">
-  <span class="mb-brand-name">MINDBEBOP</span>
-  <span class="mb-brand-tagline">— Thoughts, as they happen</span>
-</a>
+    <a class="mb-brand" href="https://kentaroyamauchiproject.github.io/mindbebop-web-assets/">
+      <img src="image/MB_LOGO_V5_1024.png"
+           data-dark="image/MB_LOGO_V5_1024_INV.png"
+           alt="MINDBEBOP logo">
+      <span class="mb-brand-name">MINDBEBOP</span>
+      <span class="mb-brand-tagline">— Thoughts, as they happen</span>
+    </a>
+
     <button class="mb-hamburger" aria-expanded="false" aria-controls="mb-menu">
       <span class="mb-open">☰</span>
       <span class="mb-close">×</span>
@@ -207,78 +227,66 @@ p {
   </nav>
 </div>
 
-<!-- PAGE CONTENT -->
+<!-- PAGE -->
 <div class="page">
-<h1>Philosophy</h1>
-<p class="subtle">Why MINDBEBOP exists.</p>
+  <h1>Philosophy</h1>
+  <p class="subtle">Why MINDBEBOP exists.</p>
 
-<p>
-MINDBEBOP is built on a simple observation:
-the reality we experience is shaped by the thoughts we carry forward.
-Thoughts that are left unattended don’t disappear —
-they accumulate as thought residue,
-quietly influencing how the world is seen,
-felt, and met.
-</p>
-
-<p>
-MINDBEBOP exists at <strong>the edge between thoughts and daily life</strong>,
-offering a gentle way to put thoughts down
-before they continue on,
-harden into habit,
-or quietly shape the moments that follow.
-</p>
-
-<p>
-<strong>Mental hygiene is the frame. Thought care is the daily action.</strong>
-</p>
-
-<p>
-It does not tell you what to think,
-what to believe,
-or who to become.
-It offers places to put thoughts down,
-moments that reduce everyday thought friction,
-and tools designed to be used lightly —
-and just as easily forgotten.
-</p>
-
-<p>
-MINDBEBOP is not about escaping the world
-or fixing the self.
-It’s about keeping the lens you meet life through
-a little cleaner,
-so moments arrive with more space,
-less residue,
-and fewer sharp edges.
-</p>
-
-<hr class="rule">
-
-<p class="subtle">
-<strong>MINDBEBOP does not change reality.</strong><br>
-It changes the amount of thought residue carried into reality.<br>
-What reality becomes after that is always personal.
-</p>
-
-<!-- Footer -->
-<div style="margin-top:60px; opacity:0.7; font-size:0.9rem;">
-  <p style="margin-bottom:12px;">
-    <a href="refusals.html" style="color:inherit; text-decoration:underline;">
-      Read: Refusals
-    </a>
+  <p>
+    MINDBEBOP is built on a simple observation:
+    the reality we experience is shaped by the thoughts we carry forward.
+    Thoughts that are left unattended don’t disappear —
+    they accumulate as thought residue,
+    quietly influencing how the world is seen,
+    felt, and met.
   </p>
-  <p style="margin-bottom:12px;">
-    <a href="mindbebop.html" style="color:inherit; text-decoration:underline;">
-      Read: MINDBEBOP
-    </a>
+
+  <p>
+    MINDBEBOP exists at <strong>the edge between thoughts and daily life</strong>,
+    offering a gentle way to put thoughts down
+    before they continue on,
+    harden into habit,
+    or quietly shape the moments that follow.
   </p>
-  Copyright © 2026 MINDBEBOP — All rights reserved.
+
+  <p><strong>Mental hygiene is the frame. Thought care is the daily action.</strong></p>
+
+  <p>
+    It does not tell you what to think,
+    what to believe,
+    or who to become.
+    It offers places to put thoughts down,
+    moments that reduce everyday thought friction,
+    and tools designed to be used lightly —
+    and just as easily forgotten.
+  </p>
+
+  <p>
+    MINDBEBOP is not about escaping the world
+    or fixing the self.
+    It’s about keeping the lens you meet life through
+    a little cleaner,
+    so moments arrive with more space,
+    less residue,
+    and fewer sharp edges.
+  </p>
+
+  <hr class="rule">
+
+  <p class="subtle">
+    <strong>MINDBEBOP does not change reality.</strong><br>
+    It changes the amount of thought residue carried into reality.<br>
+    What reality becomes after that is always personal.
+  </p>
+
+  <div style="margin-top:60px; opacity:0.7; font-size:0.9rem;">
+    <p><a href="refusals.html" style="text-decoration:underline;">Read: Refusals</a></p>
+    <p><a href="mindbebop.html" style="text-decoration:underline;">Read: MINDBEBOP</a></p>
+    Copyright © 2026 MINDBEBOP — All rights reserved.
+  </div>
 </div>
 
-</div>
-
-<!-- DARK MODE IMAGE SWAP (REQUIRED) -->
+<!-- DARK MODE IMAGE SWAP -->
 <script>
 (function () {
   function applyDarkImages(isDark) {
@@ -288,7 +296,6 @@ What reality becomes after that is always personal.
         : img.getAttribute('data-light') || img.src;
     });
   }
-
   const media = window.matchMedia('(prefers-color-scheme: dark)');
   applyDarkImages(media.matches);
   media.addEventListener('change', e => applyDarkImages(e.matches));
@@ -318,5 +325,6 @@ What reality becomes after that is always personal.
   });
 })();
 </script>
+
 </body>
 </html>
