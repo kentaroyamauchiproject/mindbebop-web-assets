@@ -23,30 +23,19 @@
    ========================= */
 
 .mb-header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: var(--bg);
-  border-bottom: 1px solid var(--border, rgba(0,0,0,0.2));
-}
-
-.mb-header-inner {
-  max-width: 980px;
-  margin: 0 auto;
-  padding: 16px 20px;
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
 }
 
 .mb-brand {
   font-weight: 600;
   text-decoration: none;
   color: var(--fg);
-  letter-spacing: 0.2px;
 }
 
-.mb-menu-button {
+.mb-hamburger {
   font-size: 22px;
   background: none;
   border: none;
@@ -54,53 +43,38 @@
   cursor: pointer;
 }
 
-/* Fullscreen menu */
+/* MENU */
 .mb-menu {
   position: fixed;
   inset: 0;
-  background: var(--bg);
-  color: var(--fg);
-  display: none;
-  z-index: 2000;
-}
-
-.mb-menu[aria-hidden="false"] {
-  display: block;
-}
-
-.mb-close {
-  position: absolute;
-  top: 18px;
-  right: 22px;
-  font-size: 28px;
-  background: none;
-  border: none;
-  color: var(--fg);
-  cursor: pointer;
-}
-
-.mb-menu-list {
-  list-style: none;
   padding: 80px 24px;
-  margin: 0;
-  max-width: 520px;
+  display: none;
 }
 
-.mb-menu-list li {
-  margin-bottom: 22px;
-}
-
-.mb-menu-list a {
-  text-decoration: none;
-  font-size: 1.4rem;
-  font-weight: 500;
+.mb-menu a {
+  display: block;
+  font-size: 1.3rem;
+  margin-bottom: 20px;
   color: var(--fg);
+  text-decoration: none;
 }
 
-/* Dark mode support */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --border: rgba(242,242,247,0.25);
+/* DESKTOP */
+@media (min-width: 900px) {
+  .mb-hamburger {
+    display: none;
+  }
+
+  .mb-menu {
+    position: static;
+    display: flex !important;
+    gap: 28px;
+    padding: 0;
+  }
+
+  .mb-menu a {
+    font-size: 0.95rem;
+    margin: 0;
   }
 }
 
@@ -254,29 +228,25 @@
 
   <!-- MINDBEBOP MENU -->
 <header class="mb-header">
-  <div class="mb-header-inner">
-    <a href="index.html" class="mb-brand">MINDBEBOP</a>
+  <a class="mb-brand" href="https://kentaroyamauchiproject.github.io/mindbebop-web-assets/">
+    MINDBEBOP
+  </a>
 
-    <button class="mb-menu-button" aria-label="Open menu">
-      ☰
-    </button>
-  </div>
+  <button class="mb-hamburger" aria-expanded="false" aria-controls="mb-menu">
+    ☰
+  </button>
 </header>
 
-<nav class="mb-menu" aria-hidden="true">
-  <button class="mb-close" aria-label="Close menu">×</button>
-
-  <ul class="mb-menu-list">
-    <li><a href="how-it-works.html">How it works</a></li>
-    <li><a href="everyday-thought-friction.html">Everyday Thought Friction</a></li>
-    <li><a href="refusals.html">Refusals</a></li>
-    <li><a href="philosophy.html">Philosophy</a></li>
-    <li><a href="gallery.html">Gallery</a></li>
-    <li><a href="privacy-policy.html">Privacy Policy</a></li>
-    <li><a href="faq.html">FAQ</a></li>
-    <li><a href="press-background.html">Press & Background</a></li>
-    <li><a href="founders-blog.html">Founder’s Blog</a></li>
-  </ul>
+<nav id="mb-menu" class="mb-menu" aria-hidden="true">
+  <a href="how-it-works.html">How it works</a>
+  <a href="everyday-thought-friction.html">Everyday Thought Friction</a>
+  <a href="refusals.html">Refusals</a>
+  <a href="philosophy.html">Philosophy</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="privacy-policy.html">Privacy Policy</a>
+  <a href="faq.html">FAQ</a>
+  <a href="press-background.html">Press & Background</a>
+  <a href="founders-blog.html">Founder’s Blog</a>
 </nav>
 
   <!-- CONTENT -->
@@ -350,23 +320,14 @@ No one told you that was optional.
     Copyright © 2026 MINDBEBOP · Founder’s Blog
   </footer>
 <script>
-(function () {
-  const openBtn = document.querySelector('.mb-menu-button');
-  const closeBtn = document.querySelector('.mb-close');
-  const menu = document.querySelector('.mb-menu');
+const btn = document.querySelector('.mb-hamburger');
+const menu = document.querySelector('.mb-menu');
 
-  if (!openBtn || !closeBtn || !menu) return;
-
-  openBtn.addEventListener('click', () => {
-    menu.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden';
-  });
-
-  closeBtn.addEventListener('click', () => {
-    menu.setAttribute('aria-hidden', 'true');
-    document.body.style.overflow = '';
-  });
-})();
+btn.addEventListener('click', () => {
+  const open = btn.getAttribute('aria-expanded') === 'true';
+  btn.setAttribute('aria-expanded', !open);
+  menu.setAttribute('aria-hidden', open);
+});
 </script>
 </body>
 </html>
