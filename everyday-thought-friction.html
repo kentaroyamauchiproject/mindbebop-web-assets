@@ -536,6 +536,7 @@ These moments don’t require fixing — they require a place to land.
 
 </div>
 
+<!-- DARK MODE IMAGE SWAP (REQUIRED) -->
 <script>
 (function () {
   function applyDarkImages(isDark) {
@@ -545,11 +546,14 @@ These moments don’t require fixing — they require a place to land.
         : img.getAttribute('data-light') || img.src;
     });
   }
+
   const media = window.matchMedia('(prefers-color-scheme: dark)');
   applyDarkImages(media.matches);
   media.addEventListener('change', e => applyDarkImages(e.matches));
 })();
 </script>
+
+<!-- MENU TOGGLE -->
 <script>
 (() => {
   const btn = document.querySelector('.mb-hamburger');

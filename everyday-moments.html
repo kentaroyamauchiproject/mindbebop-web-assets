@@ -558,6 +558,8 @@ Copyright © 2026 MINDBEBOP — All rights reserved.
 </div>
 
 </div>
+
+<!-- DARK MODE IMAGE SWAP (REQUIRED) -->
 <script>
 (function () {
   function applyDarkImages(isDark) {
@@ -567,11 +569,14 @@ Copyright © 2026 MINDBEBOP — All rights reserved.
         : img.getAttribute('data-light') || img.src;
     });
   }
+
   const media = window.matchMedia('(prefers-color-scheme: dark)');
   applyDarkImages(media.matches);
   media.addEventListener('change', e => applyDarkImages(e.matches));
 })();
 </script>
+
+<!-- MENU TOGGLE -->
 <script>
 (() => {
   const btn = document.querySelector('.mb-hamburger');
