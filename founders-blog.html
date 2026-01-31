@@ -1,37 +1,82 @@
-<!-- founders-blog.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>MINDBEBOP — Founder’s Blog</title>
-  <link rel="canonical" href="https://www.mindbebop.com/founders-blog" />
-  <meta name="robots" content="index, follow" />
+<title>MINDBEBOP — Founder’s Blog</title>
+<link rel="canonical" href="https://www.mindbebop.com/founders-blog" />
+<meta name="robots" content="index, follow" />
 
-  <meta name="description" content="Founder’s Blog — occasional notes from the founder of MINDBEBOP. Quiet thoughts on building ultralight tools for everyday thought care." />
+<meta name="description" content="Founder’s Blog — occasional notes from the founder of MINDBEBOP. Quiet thoughts on building ultralight tools for everyday thought care." />
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="MINDBEBOP — Founder’s Blog" />
-  <meta property="og:description" content="Occasional notes from the founder of MINDBEBOP — ultralight tools for everyday thought care." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.mindbebop.com/founders-blog" />
+<!-- Open Graph -->
+<meta property="og:title" content="MINDBEBOP — Founder’s Blog" />
+<meta property="og:description" content="Occasional notes from the founder of MINDBEBOP — ultralight tools for everyday thought care." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.mindbebop.com/founders-blog" />
+<meta property="og:image" content="https://www.mindbebop.com/image/MB_LOGO_V4_1024.png" />
 
-  <style>
+<style>
 /* =========================
-   MINDBEBOP MENU STYLES
+   VARIABLES (MUST COME FIRST)
+   ========================= */
+:root {
+  --bg: #ffffff;
+  --fg: #000000;
+  --border: #333333;
+  --muted: rgba(0,0,0,0.75);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #000000;
+    --fg: #f2f2f7;
+    --border: rgba(242,242,247,0.25);
+    --muted: rgba(242,242,247,0.75);
+  }
+}
+
+/* =========================
+   BASE
+   ========================= */
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  opacity: 0.6;
+}
+
+/* =========================
+   NAV CONTAINER
+   ========================= */
+.mb-nav {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 16px 20px 0;
+}
+
+/* =========================
+   HEADER / MENU
    ========================= */
 .mb-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px 20px;
 }
 
 .mb-brand {
   font-weight: 600;
-  text-decoration: none;
-  color: var(--fg);
 }
 
 .mb-hamburger {
@@ -42,7 +87,6 @@
   cursor: pointer;
 }
 
-/* Hamburger icon swap */
 .mb-hamburger .mb-close {
   display: none;
 }
@@ -55,14 +99,16 @@
   display: inline;
 }
 
-/* OVERLAY MENU (default: hidden) */
+/* =========================
+   OVERLAY MENU
+   ========================= */
 .mb-menu {
   position: fixed;
   inset: 0;
   padding: 80px 24px;
   display: none;
   flex-direction: column;
-  background: color-mix(in srgb, var(--bg) 92%, black);
+  background: color-mix(in srgb, var(--bg) 92%, transparent);
   backdrop-filter: blur(6px);
   z-index: 1000;
 }
@@ -74,16 +120,15 @@
 .mb-menu a {
   font-size: 1.4rem;
   margin-bottom: 20px;
-  color: var(--fg);
-  text-decoration: none;
 }
 
 .mb-menu a[aria-current="page"] {
-  text-decoration: underline;
-  opacity: 0.9;
+  opacity: 0.6;
 }
 
-/* DESKTOP */
+/* =========================
+   DESKTOP NAV
+   ========================= */
 @media (min-width: 900px) {
   .mb-hamburger {
     display: none;
@@ -102,33 +147,13 @@
   .mb-menu a {
     font-size: 0.95rem;
     margin: 0;
+    letter-spacing: 0.02em;
   }
 }
 
-:root {
-  --bg: #ffffff;
-  --fg: #000000;
-  --border: #333333;
-  --muted: rgba(0,0,0,0.75);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #000000;
-    --fg: #f2f2f7;
-    --border: rgba(242,242,247,0.25);
-    --muted: rgba(242,242,247,0.75);
-  }
-}
-
-body {
-  margin: 0;
-  background: var(--bg);
-  color: var(--fg);
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  line-height: 1.6;
-}
-
+/* =========================
+   PAGE
+   ========================= */
 .page {
   max-width: 780px;
   margin: 0 auto;
@@ -148,140 +173,117 @@ h2 {
   margin-bottom: 12px;
 }
 
-h3 {
-  font-size: 1.15rem;
-  font-weight: 600;
-  margin: 0;
-}
-
-p { margin-bottom: 16px; }
-
-a {
-  color: inherit;
-  text-decoration: underline;
+p {
+  margin-bottom: 16px;
 }
 
 .subtle {
   color: var(--muted);
 }
 
-.rule {
-  border: none;
-  border-bottom: 1px solid var(--border);
-  margin: 48px 0;
+.post {
+  margin-bottom: 64px;
 }
 
-.app-title {
+.meta {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+
+.signature {
   display: flex;
   align-items: center;
-  gap: 12px;
-  margin-top: 28px;
+  gap: 10px;
+  margin-top: 24px;
 }
 
-.app-title img {
-  width: 40px;
-  height: 40px;
-  object-fit: contain;
+.signature img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
 }
 </style>
 </head>
 
 <body>
 
-  <!-- MINDBEBOP MENU -->
-<header class="mb-header">
-  <a class="mb-brand" href="https://kentaroyamauchiproject.github.io/mindbebop-web-assets/">
-    MINDBEBOP
-  </a>
+<!-- MINDBEBOP MENU -->
+<div class="mb-nav">
+  <header class="mb-header">
+    <a class="mb-brand" href="https://kentaroyamauchiproject.github.io/mindbebop-web-assets/">MINDBEBOP</a>
 
-<button class="mb-hamburger" aria-expanded="false" aria-controls="mb-menu">
-  <span class="mb-open">☰</span>
-  <span class="mb-close">×</span>
-</button>
-</header>
+    <button class="mb-hamburger" aria-expanded="false" aria-controls="mb-menu">
+      <span class="mb-open">☰</span>
+      <span class="mb-close">×</span>
+    </button>
+  </header>
 
-<nav id="mb-menu" class="mb-menu" aria-hidden="true">
-  <a href="how-it-works.html">How it works</a>
-  <a href="everyday-thought-friction.html">Everyday Thought Friction</a>
-  <a href="refusals.html">Refusals</a>
-  <a href="philosophy.html">Philosophy</a>
-  <a href="gallery.html">Gallery</a>
-  <a href="privacy-policy.html">Privacy Policy</a>
-  <a href="faq.html">FAQ</a>
-  <a href="press-background.html">Press & Background</a>
-  <a href="founders-blog.html" aria-current="page">Founder’s Blog</a>
-</nav>
+  <nav id="mb-menu" class="mb-menu" aria-hidden="true">
+    <a href="how-it-works.html">How it works</a>
+    <a href="everyday-thought-friction.html">Everyday Thought Friction</a>
+    <a href="refusals.html">Refusals</a>
+    <a href="philosophy.html">Philosophy</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="privacy-policy.html">Privacy Policy</a>
+    <a href="faq.html">FAQ</a>
+    <a href="press-background.html">Press & Background</a>
+    <a href="founders-blog.html" aria-current="page">Founder’s Blog</a>
+  </nav>
+</div>
 
-  <!-- CONTENT -->
-  <main>
-    <h1>Founder’s Blog</h1>
-    <p class="intro">
-      Occasional notes from the founder of MINDBEBOP.
-      Not updates, not announcements — just a place to think out loud, <em>lightly</em>.
+<main class="page">
+  <h1>Founder’s Blog</h1>
+  <p class="subtle">
+    Occasional notes from the founder of MINDBEBOP.
+    Not updates, not announcements — just a place to think out loud, lightly.
+  </p>
+
+  <article class="post">
+    <h2>Nothing Needs You Right Now</h2>
+    <div class="meta">January 19, 2026</div>
+
+    <p>People think pressure comes from problems. It doesn’t.</p>
+    <p>Pressure comes from continuity.<br>From carrying thoughts longer than they need to exist.</p>
+    <p>Most thoughts are temporary guests that never learned how to leave.</p>
+    <p>They knock.<br>You answer.<br>Then you offer them a chair, a drink, a future.</p>
+    <p>No one told you that was optional.</p>
+
+    <div class="signature">
+      <img src="image/KentaroYamauchi_app.png" alt="Kentaro Yamauchi">
+      <span>— Kentaro</span>
+    </div>
+  </article>
+
+  <article class="post">
+    <h2>Doing less on purpose</h2>
+    <div class="meta">January 14, 2026</div>
+
+    <p>
+      I kept looking for an app that would help me “deal with my thoughts,” but most tools
+      felt like another job: track this, reflect on that, improve something, stay consistent.
+    </p>
+    <p>I wanted the opposite — something that asks almost nothing.</p>
+    <p>
+      Think Notepad or TextEdit, which I used to dump my thoughts (mostly tasks),
+      and that still helps the mind feel a little cleaner.
+    </p>
+    <p>
+      MINDBEBOP is my attempt at that: a few ultralight actions that reduce thought residue
+      without turning life into a project.
     </p>
 
-    <!-- Entry -->
- <article class="post">
-  <h2>Nothing Needs You Right Now</h2>
-  <div class="meta">January 19, 2026</div>
+    <div class="signature">
+      <img src="image/KentaroYamauchi_app.png" alt="Kentaro Yamauchi">
+      <span>— Kentaro</span>
+    </div>
+  </article>
+</main>
 
-  <p>
-    People think pressure comes from problems.
-It doesn’t.
-<p>
-Pressure comes from continuity.<br>
-From carrying thoughts longer than they need to exist.
-</p>
-<p>
-  Most thoughts are temporary guests that never learned how to leave.
-</p>
-  <p>
-They knock.<br>
-You answer.<br>
-Then you offer them a chair, a drink, a future.
-</p>
-<p>
-No one told you that was optional.
-</P>
-  <div class="signature">
-  <img
-    src="image/KentaroYamauchi_app.png"
-    alt="Kentaro Yamauchi">
-  <span>— Kentaro</span>
-</div>
-</article>
-<p><br>
-    <article class="post">
-  <h2>Doing less on purpose</h2>
-  <div class="meta">January 14, 2026</div>
+<footer class="page subtle">
+  Copyright © 2026 MINDBEBOP · Founder’s Blog
+</footer>
 
-  <p>
-    I kept looking for an app that would help me “deal with my thoughts,” but most tools
-    felt like another job: track this, reflect on that, improve something, stay consistent.
-<p>
-  I wanted the opposite — something that asks almost nothing.
-</p>
-<p>
-  Think Notepad or TextEdit, which I used to dump my thoughts (mostly tasks),
-  and that still helps the mind feel a little cleaner.
-</p>
-  </p>
-  <p>
-    MINDBEBOP is my attempt at that: a few ultralight actions that reduce thought residue
-    without turning life into a project. To me “thought care” is simply brushing off thought friction.
-  </p>
-  <div class="signature">
-  <img
-    src="image/KentaroYamauchi_app.png"
-    alt="Kentaro Yamauchi">
-  <span>— Kentaro</span>
-</div>
-</article>
-  </main>
-
-  <footer>
-    Copyright © 2026 MINDBEBOP · Founder’s Blog
-  </footer>
 <script>
 (() => {
   const btn = document.querySelector('.mb-hamburger');
@@ -304,5 +306,6 @@ No one told you that was optional.
   });
 })();
 </script>
+
 </body>
 </html>
