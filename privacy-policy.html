@@ -18,10 +18,9 @@
 <meta property="og:url" content="https://www.mindbebop.com/privacy">
 
 <style>
-/* =========================
+    /* =========================
    MINDBEBOP MENU STYLES
    ========================= */
-
 .mb-header {
   display: flex;
   justify-content: space-between;
@@ -48,17 +47,16 @@
   position: fixed;
   inset: 0;
   padding: 80px 24px;
-  display: none;
+  background: var(--bg);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease;
 }
 
-.mb-menu a {
-  display: block;
-  font-size: 1.3rem;
-  margin-bottom: 20px;
-  color: var(--fg);
-  text-decoration: none;
+.mb-menu[aria-hidden="false"] {
+  opacity: 1;
+  pointer-events: auto;
 }
-
 /* DESKTOP */
 @media (min-width: 900px) {
   .mb-hamburger {
@@ -67,9 +65,12 @@
 
   .mb-menu {
     position: static;
-    display: flex !important;
+    opacity: 1 !important;
+    pointer-events: auto;
+    display: flex;
     gap: 28px;
     padding: 0;
+    background: none;
   }
 
   .mb-menu a {
@@ -77,6 +78,7 @@
     margin: 0;
   }
 }
+
 :root {
     --bg: #ffffff;
     --fg: #000000;
