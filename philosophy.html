@@ -5,21 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>MINDBEBOP — Philosophy</title>
-
 <link rel="canonical" href="https://www.mindbebop.com/philosophy">
 <meta name="robots" content="index, follow">
 
-<meta name="description" content="The philosophy behind MINDBEBOP — a quiet approach to reducing everyday thought friction, designed to help thoughts settle without telling you what to think or who to become.">
-
-<meta property="og:title" content="MINDBEBOP — Philosophy">
-<meta property="og:description" content="MINDBEBOP exists to help reduce thought residue before it quietly shapes experience.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://www.mindbebop.com/philosophy">
+<meta name="description" content="The philosophy behind MINDBEBOP — a quiet approach to reducing everyday thought friction.">
 
 <style>
-/* =========================
-   VARIABLES (MUST COME FIRST)
-   ========================= */
 :root {
   --bg: #ffffff;
   --fg: #000000;
@@ -36,9 +27,6 @@
   }
 }
 
-/* =========================
-   BASE
-   ========================= */
 body {
   margin: 0;
   background: var(--bg);
@@ -56,18 +44,13 @@ a:hover {
   opacity: 0.6;
 }
 
-/* =========================
-   NAV CONTAINER
-   ========================= */
+/* NAV WRAPPER — THIS IS THE CRITICAL PART */
 .mb-nav {
   max-width: 780px;
   margin: 0 auto;
   padding: 16px 20px 0;
 }
 
-/* =========================
-   HEADER / MENU
-   ========================= */
 .mb-header {
   display: flex;
   justify-content: space-between;
@@ -76,7 +59,6 @@ a:hover {
 
 .mb-brand {
   font-weight: 600;
-  color: var(--fg);
 }
 
 .mb-hamburger {
@@ -91,9 +73,6 @@ a:hover {
 .mb-hamburger[aria-expanded="true"] .mb-open { display: none; }
 .mb-hamburger[aria-expanded="true"] .mb-close { display: inline; }
 
-/* =========================
-   OVERLAY MENU
-   ========================= */
 .mb-menu {
   position: fixed;
   inset: 0;
@@ -105,22 +84,13 @@ a:hover {
   z-index: 1000;
 }
 
-.mb-menu[aria-hidden="false"] {
-  display: flex;
-}
+.mb-menu[aria-hidden="false"] { display: flex; }
 
 .mb-menu a {
   font-size: 1.4rem;
   margin-bottom: 20px;
 }
 
-.mb-menu a[aria-current="page"] {
-  opacity: 0.6;
-}
-
-/* =========================
-   DESKTOP NAV
-   ========================= */
 @media (min-width: 900px) {
   .mb-hamburger { display: none; }
 
@@ -130,8 +100,8 @@ a:hover {
     flex-direction: row;
     gap: 28px;
     padding: 0;
-    backdrop-filter: none;
     background: none;
+    backdrop-filter: none;
   }
 
   .mb-menu a {

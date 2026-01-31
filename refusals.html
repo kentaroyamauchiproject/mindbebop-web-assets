@@ -18,7 +18,7 @@
 
 <style>
 /* =========================
-   VARIABLES (MUST COME FIRST)
+   VARIABLES
    ========================= */
 :root {
   --bg: #ffffff;
@@ -57,7 +57,7 @@ a:hover {
 }
 
 /* =========================
-   NAV CONTAINER
+   NAV WRAPPER (CRITICAL)
    ========================= */
 .mb-nav {
   max-width: 780px;
@@ -65,9 +65,6 @@ a:hover {
   padding: 16px 20px 0;
 }
 
-/* =========================
-   HEADER / MENU
-   ========================= */
 .mb-header {
   display: flex;
   justify-content: space-between;
@@ -76,7 +73,6 @@ a:hover {
 
 .mb-brand {
   font-weight: 600;
-  color: var(--fg);
 }
 
 .mb-hamburger {
@@ -92,7 +88,7 @@ a:hover {
 .mb-hamburger[aria-expanded="true"] .mb-close { display: inline; }
 
 /* =========================
-   OVERLAY MENU
+   MENU
    ========================= */
 .mb-menu {
   position: fixed;
@@ -130,8 +126,8 @@ a:hover {
     flex-direction: row;
     gap: 28px;
     padding: 0;
-    backdrop-filter: none;
     background: none;
+    backdrop-filter: none;
   }
 
   .mb-menu a {

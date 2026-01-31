@@ -11,7 +11,6 @@
 
 <meta name="description" content="MINDBEBOP Privacy Policy. All apps operate entirely on-device. We do not collect, store, transmit, or sell personal data.">
 
-<!-- Open Graph -->
 <meta property="og:title" content="MINDBEBOP Privacy Policy">
 <meta property="og:description" content="Learn how MINDBEBOP protects your privacy. All data remains on your device. No tracking, no analytics, no data collection.">
 <meta property="og:type" content="website">
@@ -19,7 +18,7 @@
 
 <style>
 /* =========================
-   VARIABLES (MUST COME FIRST)
+   VARIABLES
    ========================= */
 :root {
   --bg: #ffffff;
@@ -58,7 +57,7 @@ a:hover {
 }
 
 /* =========================
-   NAV CONTAINER
+   NAV WRAPPER (CRITICAL)
    ========================= */
 .mb-nav {
   max-width: 780px;
@@ -66,9 +65,6 @@ a:hover {
   padding: 16px 20px 0;
 }
 
-/* =========================
-   HEADER / MENU
-   ========================= */
 .mb-header {
   display: flex;
   justify-content: space-between;
@@ -77,7 +73,6 @@ a:hover {
 
 .mb-brand {
   font-weight: 600;
-  color: var(--fg);
 }
 
 .mb-hamburger {
@@ -93,7 +88,7 @@ a:hover {
 .mb-hamburger[aria-expanded="true"] .mb-close { display: inline; }
 
 /* =========================
-   OVERLAY MENU
+   MENU
    ========================= */
 .mb-menu {
   position: fixed;
@@ -131,8 +126,8 @@ a:hover {
     flex-direction: row;
     gap: 28px;
     padding: 0;
-    backdrop-filter: none;
     background: none;
+    backdrop-filter: none;
   }
 
   .mb-menu a {
