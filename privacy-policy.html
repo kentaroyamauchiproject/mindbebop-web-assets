@@ -18,7 +18,7 @@
 <meta property="og:url" content="https://www.mindbebop.com/privacy">
 
 <style>
-    /* =========================
+/* =========================
    MINDBEBOP MENU STYLES
    ========================= */
 .mb-header {
@@ -42,21 +42,47 @@
   cursor: pointer;
 }
 
-/* MENU */
+/* Hamburger icon swap */
+.mb-hamburger .mb-close {
+  display: none;
+}
+
+.mb-hamburger[aria-expanded="true"] .mb-open {
+  display: none;
+}
+
+.mb-hamburger[aria-expanded="true"] .mb-close {
+  display: inline;
+}
+
+/* OVERLAY MENU (default: hidden) */
 .mb-menu {
   position: fixed;
   inset: 0;
   padding: 80px 24px;
-  background: var(--bg);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.15s ease;
+  display: none;
+  flex-direction: column;
+  background: color-mix(in srgb, var(--bg) 92%, black);
+  backdrop-filter: blur(6px);
+  z-index: 1000;
 }
 
 .mb-menu[aria-hidden="false"] {
-  opacity: 1;
-  pointer-events: auto;
+  display: flex;
 }
+
+.mb-menu a {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  color: var(--fg);
+  text-decoration: none;
+}
+
+.mb-menu a[aria-current="page"] {
+  text-decoration: underline;
+  opacity: 0.9;
+}
+
 /* DESKTOP */
 @media (min-width: 900px) {
   .mb-hamburger {
@@ -65,11 +91,11 @@
 
   .mb-menu {
     position: static;
-    opacity: 1 !important;
-    pointer-events: auto;
-    display: flex;
+    display: flex !important;
+    flex-direction: row;
     gap: 28px;
     padding: 0;
+    backdrop-filter: none;
     background: none;
   }
 
@@ -80,64 +106,82 @@
 }
 
 :root {
-    --bg: #ffffff;
-    --fg: #000000;
-    --border: #333333;
+  --bg: #ffffff;
+  --fg: #000000;
+  --border: #333333;
+  --muted: rgba(0,0,0,0.75);
 }
 
 @media (prefers-color-scheme: dark) {
-    :root {
-        --bg: #000000;
-        --fg: #f2f2f7;
-        --border: rgba(242, 242, 247, 0.25);
-    }
+  :root {
+    --bg: #000000;
+    --fg: #f2f2f7;
+    --border: rgba(242,242,247,0.25);
+    --muted: rgba(242,242,247,0.75);
+  }
 }
 
 body {
-    margin: 0;
-    background-color: var(--bg);
-    color: var(--fg);
-    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
-    line-height: 1.6;
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.6;
 }
 
 .page {
-    max-width: 780px;
-    margin: 0 auto;
-    padding: 40px 20px 80px;
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 40px 20px 80px;
 }
 
 h1 {
-    font-weight: 600;
-    font-size: 2rem;
-    margin: 0 0 24px;
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 0 0 24px;
 }
 
-h2, h3 {
-    font-weight: 600;
-    margin-top: 40px;
-    margin-bottom: 10px;
+h2 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-top: 44px;
+  margin-bottom: 12px;
+}
+
+h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin: 0;
 }
 
 p { margin-bottom: 16px; }
 
 a {
-    color: inherit;
-    text-decoration: underline;
+  color: inherit;
+  text-decoration: underline;
 }
 
-.section { margin-bottom: 40px; }
-
-.app-section {
-    border-left: 3px solid var(--border);
-    padding-left: 16px;
-    margin-top: 30px;
+.subtle {
+  color: var(--muted);
 }
 
-hr {
-    margin: 40px 0;
-    border: none;
-    border-bottom: 1px solid var(--border);
+.rule {
+  border: none;
+  border-bottom: 1px solid var(--border);
+  margin: 48px 0;
+}
+
+.app-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.app-title img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
 }
 </style>
 </head>
@@ -150,9 +194,10 @@ hr {
     MINDBEBOP
   </a>
 
-  <button class="mb-hamburger" aria-expanded="false" aria-controls="mb-menu">
-    ☰
-  </button>
+<button class="mb-hamburger" aria-expanded="false" aria-controls="mb-menu">
+  <span class="mb-open">☰</span>
+  <span class="mb-close">×</span>
+</button>
 </header>
 
 <nav id="mb-menu" class="mb-menu" aria-hidden="true">
@@ -161,7 +206,7 @@ hr {
   <a href="refusals.html">Refusals</a>
   <a href="philosophy.html">Philosophy</a>
   <a href="gallery.html">Gallery</a>
-  <a href="privacy-policy.html">Privacy Policy</a>
+  <a href="privacy-policy.html" aria-current="page">Privacy Policy</a>
   <a href="faq.html">FAQ</a>
   <a href="press-background.html">Press & Background</a>
   <a href="founders-blog.html">Founder’s Blog</a>
@@ -388,14 +433,26 @@ including time-based thought release functionality.
 
 </div>
 <script>
-const btn = document.querySelector('.mb-hamburger');
-const menu = document.querySelector('.mb-menu');
+(() => {
+  const btn = document.querySelector('.mb-hamburger');
+  const menu = document.querySelector('.mb-menu');
+  if (!btn || !menu) return;
 
-btn.addEventListener('click', () => {
-  const open = btn.getAttribute('aria-expanded') === 'true';
-  btn.setAttribute('aria-expanded', !open);
-  menu.setAttribute('aria-hidden', open);
-});
+  btn.addEventListener('click', () => {
+    const open = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!open));
+    menu.setAttribute('aria-hidden', String(open));
+    document.body.style.overflow = open ? '' : 'hidden';
+  });
+
+  menu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      btn.setAttribute('aria-expanded', 'false');
+      menu.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    });
+  });
+})();
 </script>
 </body>
 </html>

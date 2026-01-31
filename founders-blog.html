@@ -18,7 +18,7 @@
   <meta property="og:url" content="https://www.mindbebop.com/founders-blog" />
 
   <style>
-    /* =========================
+/* =========================
    MINDBEBOP MENU STYLES
    ========================= */
 .mb-header {
@@ -42,21 +42,47 @@
   cursor: pointer;
 }
 
-/* MENU */
+/* Hamburger icon swap */
+.mb-hamburger .mb-close {
+  display: none;
+}
+
+.mb-hamburger[aria-expanded="true"] .mb-open {
+  display: none;
+}
+
+.mb-hamburger[aria-expanded="true"] .mb-close {
+  display: inline;
+}
+
+/* OVERLAY MENU (default: hidden) */
 .mb-menu {
   position: fixed;
   inset: 0;
   padding: 80px 24px;
-  background: var(--bg);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.15s ease;
+  display: none;
+  flex-direction: column;
+  background: color-mix(in srgb, var(--bg) 92%, black);
+  backdrop-filter: blur(6px);
+  z-index: 1000;
 }
 
 .mb-menu[aria-hidden="false"] {
-  opacity: 1;
-  pointer-events: auto;
+  display: flex;
 }
+
+.mb-menu a {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  color: var(--fg);
+  text-decoration: none;
+}
+
+.mb-menu a[aria-current="page"] {
+  text-decoration: underline;
+  opacity: 0.9;
+}
+
 /* DESKTOP */
 @media (min-width: 900px) {
   .mb-hamburger {
@@ -65,11 +91,11 @@
 
   .mb-menu {
     position: static;
-    opacity: 1 !important;
-    pointer-events: auto;
-    display: flex;
+    display: flex !important;
+    flex-direction: row;
     gap: 28px;
     padding: 0;
+    backdrop-filter: none;
     background: none;
   }
 
@@ -79,151 +105,85 @@
   }
 }
 
-
-    :root {
+:root {
   --bg: #ffffff;
-  --fg: #1c1c1e;
-  --muted: rgba(28, 28, 30, 0.68);
-  --hairline: rgba(28, 28, 30, 0.12);
-  --card: #F2F2F7; /* blog entry background (light mode) */
-  --max: 860px;
+  --fg: #000000;
+  --border: #333333;
+  --muted: rgba(0,0,0,0.75);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --bg: #000000;
     --fg: #f2f2f7;
-    --muted: rgba(242, 242, 247, 0.72);
-    --hairline: rgba(242, 242, 247, 0.14);
-    --card: #2C2C2C; /* blog entry background (dark mode) */
+    --border: rgba(242,242,247,0.25);
+    --muted: rgba(242,242,247,0.75);
   }
 }
 
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background: var(--bg);
-      color: var(--fg);
-      line-height: 1.55;
-    }
-
-    /* --------------------------------------------------
-       GLOBAL NAV (kept minimal on this page)
-    -------------------------------------------------- */
-
-    .nav {
-      position: sticky;
-      top: 0;
-      background: color-mix(in srgb, var(--bg) 92%, transparent);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--hairline);
-      z-index: 10;
-    }
-
-    .nav-inner {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 14px 18px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .brand a {
-      text-decoration: none;
-      color: var(--fg);
-      font-weight: 600;
-      letter-spacing: 0.2px;
-    }
-
-.post p + p {
-  margin-top: 12px;
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.6;
 }
 
-.signature {
-  margin-top: 12px;
+.page {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 40px 20px 80px;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 0 0 24px;
+}
+
+h2 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-top: 44px;
+  margin-bottom: 12px;
+}
+
+h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+p { margin-bottom: 16px; }
+
+a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.subtle {
+  color: var(--muted);
+}
+
+.rule {
+  border: none;
+  border-bottom: 1px solid var(--border);
+  margin: 48px 0;
+}
+
+.app-title {
   display: flex;
   align-items: center;
-  gap: 8px;
-  color: var(--muted);
-  font-size: 14px;
-}
-.signature img {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  object-fit: cover;
-  opacity: 0.85;
+  gap: 12px;
+  margin-top: 28px;
 }
 
-    /* Hide right-side nav completely on Founder’s Blog */
-    .nav-links {
-      display: none;
-    }
-
-    /* --------------------------------------------------
-       CONTENT
-    -------------------------------------------------- */
-
-    main {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 36px 18px 60px;
-    }
-
-    h1 {
-      font-size: 28px;
-      margin: 0 0 10px;
-      letter-spacing: -0.2px;
-    }
-
-    .intro {
-      color: var(--muted);
-      max-width: 70ch;
-      margin-bottom: 28px;
-      font-size: 16px;
-    }
-
-    /* --------------------------------------------------
-       POSTS
-    -------------------------------------------------- */
-
-    .post {
-      border: 1px solid var(--hairline);
-      border-radius: 18px;
-      padding: 18px 18px 16px;
-      background: var(--card);
-      margin-bottom: 16px;
-    }
-
-    .post h2 {
-      font-size: 18px;
-      margin: 0 0 6px;
-      letter-spacing: -0.1px;
-    }
-
-    .meta {
-      color: var(--muted);
-      font-size: 13px;
-      margin-bottom: 10px;
-    }
-
-    .post p {
-      margin: 0;
-      max-width: 80ch;
-    }
-
-    footer {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 18px;
-      border-top: 1px solid var(--hairline);
-      color: var(--muted);
-      font-size: 13px;
-    }
-  </style>
+.app-title img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+</style>
 </head>
 
 <body>
@@ -234,9 +194,10 @@
     MINDBEBOP
   </a>
 
-  <button class="mb-hamburger" aria-expanded="false" aria-controls="mb-menu">
-    ☰
-  </button>
+<button class="mb-hamburger" aria-expanded="false" aria-controls="mb-menu">
+  <span class="mb-open">☰</span>
+  <span class="mb-close">×</span>
+</button>
 </header>
 
 <nav id="mb-menu" class="mb-menu" aria-hidden="true">
@@ -248,7 +209,7 @@
   <a href="privacy-policy.html">Privacy Policy</a>
   <a href="faq.html">FAQ</a>
   <a href="press-background.html">Press & Background</a>
-  <a href="founders-blog.html">Founder’s Blog</a>
+  <a href="founders-blog.html" aria-current="page">Founder’s Blog</a>
 </nav>
 
   <!-- CONTENT -->
@@ -322,14 +283,26 @@ No one told you that was optional.
     Copyright © 2026 MINDBEBOP · Founder’s Blog
   </footer>
 <script>
-const btn = document.querySelector('.mb-hamburger');
-const menu = document.querySelector('.mb-menu');
+(() => {
+  const btn = document.querySelector('.mb-hamburger');
+  const menu = document.querySelector('.mb-menu');
+  if (!btn || !menu) return;
 
-btn.addEventListener('click', () => {
-  const open = btn.getAttribute('aria-expanded') === 'true';
-  btn.setAttribute('aria-expanded', !open);
-  menu.setAttribute('aria-hidden', open);
-});
+  btn.addEventListener('click', () => {
+    const open = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!open));
+    menu.setAttribute('aria-hidden', String(open));
+    document.body.style.overflow = open ? '' : 'hidden';
+  });
+
+  menu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      btn.setAttribute('aria-expanded', 'false');
+      menu.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    });
+  });
+})();
 </script>
 </body>
 </html>
