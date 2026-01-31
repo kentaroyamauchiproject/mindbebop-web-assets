@@ -18,13 +18,60 @@
 
 <style>
 /* =========================
-   MINDBEBOP MENU STYLES
+   VARIABLES (MUST COME FIRST)
+   ========================= */
+:root {
+  --bg: #ffffff;
+  --fg: #000000;
+  --border: #333333;
+  --muted: rgba(0,0,0,0.75);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #000000;
+    --fg: #f2f2f7;
+    --border: rgba(242,242,247,0.25);
+    --muted: rgba(242,242,247,0.75);
+  }
+}
+
+/* =========================
+   BASE
+   ========================= */
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  opacity: 0.6;
+}
+
+/* =========================
+   NAV CONTAINER
+   ========================= */
+.mb-nav {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 16px 20px 0;
+}
+
+/* =========================
+   HEADER / MENU
    ========================= */
 .mb-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px 20px;
 }
 
 .mb-brand {
@@ -54,14 +101,16 @@
   display: inline;
 }
 
-/* OVERLAY MENU (default: hidden) */
+/* =========================
+   OVERLAY MENU
+   ========================= */
 .mb-menu {
   position: fixed;
   inset: 0;
   padding: 80px 24px;
   display: none;
   flex-direction: column;
-  background: color-mix(in srgb, var(--bg) 92%, black);
+  background: color-mix(in srgb, var(--bg) 92%, transparent);
   backdrop-filter: blur(6px);
   z-index: 1000;
 }
@@ -78,11 +127,12 @@
 }
 
 .mb-menu a[aria-current="page"] {
-  text-decoration: underline;
-  opacity: 0.9;
+  opacity: 0.6;
 }
 
-/* DESKTOP */
+/* =========================
+   DESKTOP NAV
+   ========================= */
 @media (min-width: 900px) {
   .mb-hamburger {
     display: none;
@@ -101,33 +151,13 @@
   .mb-menu a {
     font-size: 0.95rem;
     margin: 0;
+    letter-spacing: 0.02em;
   }
 }
 
-:root {
-  --bg: #ffffff;
-  --fg: #000000;
-  --border: #333333;
-  --muted: rgba(0,0,0,0.75);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #000000;
-    --fg: #f2f2f7;
-    --border: rgba(242,242,247,0.25);
-    --muted: rgba(242,242,247,0.75);
-  }
-}
-
-body {
-  margin: 0;
-  background: var(--bg);
-  color: var(--fg);
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  line-height: 1.6;
-}
-
+/* =========================
+   PAGE
+   ========================= */
 .page {
   max-width: 780px;
   margin: 0 auto;
@@ -155,11 +185,6 @@ h3 {
 
 p { margin-bottom: 16px; }
 
-a {
-  color: inherit;
-  text-decoration: underline;
-}
-
 .subtle {
   color: var(--muted);
 }
@@ -181,6 +206,36 @@ a {
   width: 40px;
   height: 40px;
   object-fit: contain;
+}
+
+.footer-link {
+  text-decoration: underline;
+}
+
+.section {
+  margin-bottom: 48px;
+}
+
+.quote {
+  margin: 32px 0;
+  padding-left: 20px;
+  border-left: 2px solid var(--border);
+  font-style: italic;
+  color: var(--muted);
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+li::before {
+  content: "— ";
+  color: var(--muted);
+}
+
+ul {
+  margin-bottom: 24px;
 }
 </style>
 </head>
@@ -293,18 +348,17 @@ self-optimization, or performance.
 <div class="section">
     <h2>Positioning</h2>
 
-    <p>
-        MINDBEBOP occupies a space that currently has no direct equivalent.
-        Most mind-related apps either guide behavior (journaling, mindfulness,
-        therapy, productivity) or capture attention (media, games, ambient tools).
-        MINDBEBOP does neither. Its integrated tools—MindFlipOut, MindShoutOut,
-        MindZoneOut, MindEaseOut, and the procedural MindShiftBackyard—are designed
-        to reduce thought friction and then immediately disengage, without goals,
-        tracking, progress, identity building, or content accumulation. No existing
-        product combines transient thought tools with an outcome-free, lightweight
-        environment that explicitly refuses continuity and retention. What exists
-        elsewhere are isolated features; the system itself does not exist.
-    </p>
+<p>
+MINDBEBOP occupies a space that currently has no direct equivalent.
+Most mind-related apps either guide behavior (journaling, mindfulness,
+therapy, productivity) or capture attention (media, games, ambient tools).
+</p>
+
+<p>
+MINDBEBOP does neither. Its integrated tools—MindFlipOut, MindShoutOut,
+MindZoneOut, MindEaseOut, and the procedural MindShiftBackyard—are designed
+to reduce thought friction and then immediately disengage, without goals, tracking, or retention.
+</p>
 </div>
 
 <div class="section">
