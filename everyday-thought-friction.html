@@ -183,6 +183,56 @@ a {
 ul.subtle {
   padding-left: 18px;
 }
+
+.diagram {
+  flex: 0 0 300px;
+  max-width: 300px;
+  margin: 0;
+}
+
+.diagram img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.table-wrap {
+  margin-top: 18px;
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 860px;
+}
+
+.icon-cell { width: 56px; }
+
+.icon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+@media (max-width: 760px) {
+  .map-intro {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .diagram {
+    max-width: 360px;
+    width: 100%;
+    margin: 20px 0;
+  }
+
+  .map-text {
+    max-width: 70ch;
+  }
+}
 </style>
 
 </head>
