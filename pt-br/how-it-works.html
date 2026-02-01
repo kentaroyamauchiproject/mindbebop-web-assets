@@ -225,6 +225,34 @@ p {
 * {
   box-sizing: border-box;
 }
+
+.lang-switch {
+  display: flex;
+  gap: 10px;
+  font-size: 0.75rem;
+  opacity: 0.6;
+}
+
+.lang-switch a {
+  text-decoration: none;
+  letter-spacing: 0.05em;
+}
+
+.lang-switch a:hover {
+  opacity: 1;
+}
+
+.lang-switch a[aria-current="true"] {
+  opacity: 1;
+  font-weight: 600;
+}
+
+/* Hide on small screens */
+@media (max-width: 900px) {
+  .lang-switch {
+    display: none;
+  }
+}
 </style>
 </head>
 
@@ -242,9 +270,19 @@ p {
       <span class="mb-open">☰</span>
       <span class="mb-close">×</span>
     </button>
-  </header>
+</header>
 
-  <nav id="mb-menu" class="mb-menu" aria-hidden="true">
+<div class="mb-lang">
+  <a href="/how-it-works.html">EN</a>
+  <a href="/jp/how-it-works.html">JP</a>
+  <a href="/de/how-it-works.html">DE</a>
+  <a href="/ko/how-it-works.html">KO</a>
+  <a href="/fr/how-it-works.html">FR</a>
+  <a href="/es/how-it-works.html">ES</a>
+  <a href="/pt-br/how-it-works.html" aria-current="true">PT-BR</a>
+</div>
+
+<nav id="mb-menu" class="mb-menu" aria-hidden="true">
     <a href="how-it-works.html" aria-current="page">Como funciona</a>
     <a href="everyday-thought-friction.html">Fricção Mental</a>
     <a href="philosophy.html">Filosofia</a>
