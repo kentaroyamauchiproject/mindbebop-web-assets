@@ -317,6 +317,34 @@ tbody tr:last-child td {
   height: 40px;
   object-fit: contain;
 }
+
+.lang-switch {
+  display: flex;
+  gap: 10px;
+  font-size: 0.75rem;
+  opacity: 0.6;
+}
+
+.lang-switch a {
+  text-decoration: none;
+  letter-spacing: 0.05em;
+}
+
+.lang-switch a:hover {
+  opacity: 1;
+}
+
+.lang-switch a[aria-current="true"] {
+  opacity: 1;
+  font-weight: 600;
+}
+
+/* Hide on small screens */
+@media (max-width: 900px) {
+  .lang-switch {
+    display: none;
+  }
+}
 </style>
 
 </head>
@@ -338,7 +366,17 @@ tbody tr:last-child td {
       <span class="mb-open">☰</span>
       <span class="mb-close">×</span>
     </button>
-  </header>
+</header>
+
+<div class="mb-lang">
+  <a href="/everyday-thought-friction.html">EN</a>
+  <a href="/jp/everyday-thought-friction.html">JP</a>
+  <a href="/de/everyday-thought-friction.html">DE</a>
+  <a href="/ko/everyday-thought-friction.html" aria-current="true">KO</a>
+  <a href="/fr/everyday-thought-friction.html">FR</a>
+  <a href="/es/everyday-thought-friction.html">ES</a>
+  <a href="/pt-br/everyday-thought-friction.html">PT-BR</a>
+</div>
 
 <nav id="mb-menu" class="mb-menu" aria-hidden="true">
   <a href="how-it-works.html">작동 원리</a>
