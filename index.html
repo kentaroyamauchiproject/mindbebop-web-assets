@@ -3,13 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- Favicons -->
-<link rel="icon" href="favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
 
-<link rel="canonical" href="https://www.mindbebop.com/">
+<!-- Available Languages -->
+<link rel="alternate" hreflang="en" href="https://www.mindbebop.com/how-it-works.html">
+<link rel="alternate" hreflang="ja" href="https://www.mindbebop.com/jp/how-it-works.html">
+<link rel="alternate" hreflang="de" href="https://www.mindbebop.com/de/how-it-works.html">
+<link rel="alternate" hreflang="ko" href="https://www.mindbebop.com/ko/how-it-works.html">
+<link rel="alternate" hreflang="fr" href="https://www.mindbebop.com/fr/how-it-works.html">
+<link rel="alternate" hreflang="es" href="https://www.mindbebop.com/es/how-it-works.html">
+<link rel="alternate" hreflang="pt-BR" href="https://www.mindbebop.com/pt-br/how-it-works.html">
+<link rel="alternate" hreflang="x-default" href="https://www.mindbebop.com/how-it-works.html">
 
 <!-- Basic SEO -->
 <meta name="description" content="MINDBEBOP introduces the world’s first mind-brushing kit — ultralight apps for everyday mental hygiene, designed to reduce thought friction and thought residue in daily life.">
@@ -206,6 +209,34 @@ a:hover {
 * {
   box-sizing: border-box;
 }
+
+.lang-switch {
+  display: flex;
+  gap: 10px;
+  font-size: 0.75rem;
+  opacity: 0.6;
+}
+
+.lang-switch a {
+  text-decoration: none;
+  letter-spacing: 0.05em;
+}
+
+.lang-switch a:hover {
+  opacity: 1;
+}
+
+.lang-switch a[aria-current="true"] {
+  opacity: 1;
+  font-weight: 600;
+}
+
+/* Hide on small screens */
+@media (max-width: 900px) {
+  .lang-switch {
+    display: none;
+  }
+}
 </style>
 </head>
 
@@ -228,6 +259,17 @@ a:hover {
       <span class="mb-close">×</span>
     </button>
   </header>
+
+<!-- LANGUAGE SELECTOR -->
+<div class="mb-lang">
+  <a href="/" aria-current="true">EN</a>
+  <a href="/jp/">JP</a>
+  <a href="/de/">DE</a>
+  <a href="/ko/">KO</a>
+  <a href="/fr/">FR</a>
+  <a href="/es/">ES</a>
+  <a href="/pt-br/">PT-BR</a>
+</div>
 
   <nav id="mb-menu" class="mb-menu" aria-hidden="true">
     <a href="how-it-works.html">How it works</a>
