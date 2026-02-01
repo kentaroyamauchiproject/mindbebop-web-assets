@@ -110,6 +110,16 @@ a:hover {
 .mb-hamburger[aria-expanded="true"] .mb-open { display: none; }
 .mb-hamburger[aria-expanded="true"] .mb-close { display: inline; }
 
+.mb-hamburger {
+  position: relative;
+  z-index: 1100; /* must be higher than .mb-menu */
+}
+
+.mb-menu[aria-hidden="false"] + .mb-hamburger,
+.mb-hamburger[aria-expanded="true"] {
+  color: var(--fg);
+}
+
 /* =========================
    MENU
    ========================= */
