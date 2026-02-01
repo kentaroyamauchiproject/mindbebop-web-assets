@@ -4,6 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<!-- Available Languages -->
+<link rel="alternate" hreflang="en" href="https://www.mindbebop.com/philosophy.html">
+<link rel="alternate" hreflang="ja" href="https://www.mindbebop.com/jp/philosophy.html">
+<link rel="alternate" hreflang="de" href="https://www.mindbebop.com/de/philosophy.html">
+<link rel="alternate" hreflang="ko" href="https://www.mindbebop.com/ko/philosophy.html">
+<link rel="alternate" hreflang="fr" href="https://www.mindbebop.com/fr/philosophy.html">
+<link rel="alternate" hreflang="es" href="https://www.mindbebop.com/es/philosophy.html">
+<link rel="alternate" hreflang="pt-BR" href="https://www.mindbebop.com/pt-br/philosophy.html">
+<link rel="alternate" hreflang="x-default" href="https://www.mindbebop.com/philosophy.html">
+
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
@@ -207,6 +217,34 @@ p {
   border-bottom: 1px solid var(--border);
   margin: 48px 0;
 }
+
+.lang-switch {
+  display: flex;
+  gap: 10px;
+  font-size: 0.75rem;
+  opacity: 0.6;
+}
+
+.lang-switch a {
+  text-decoration: none;
+  letter-spacing: 0.05em;
+}
+
+.lang-switch a:hover {
+  opacity: 1;
+}
+
+.lang-switch a[aria-current="true"] {
+  opacity: 1;
+  font-weight: 600;
+}
+
+/* Hide on small screens */
+@media (max-width: 900px) {
+  .lang-switch {
+    display: none;
+  }
+}
 </style>
 </head>
 
@@ -226,9 +264,19 @@ p {
       <span class="mb-open">☰</span>
       <span class="mb-close">×</span>
     </button>
-  </header>
+</header>
 
-  <nav id="mb-menu" class="mb-menu" aria-hidden="true">
+<div class="mb-lang">
+  <a href="/philosophy.html">EN</a>
+  <a href="/jp/philosophy.html">JP</a>
+  <a href="/de/philosophy.html" aria-current="true">DE</a>
+  <a href="/ko/philosophy.html">KO</a>
+  <a href="/fr/philosophy.html">FR</a>
+  <a href="/es/philosophy.html">ES</a>
+  <a href="/pt-br/philosophy.html">PT-BR</a>
+</div>
+
+<nav id="mb-menu" class="mb-menu" aria-hidden="true">
     <a href="how-it-works.html">Funktionsweise</a>
     <a href="everyday-thought-friction.html">Gedankenreibung</a>
     <a href="philosophy.html" aria-current="page">Philosophie</a>
